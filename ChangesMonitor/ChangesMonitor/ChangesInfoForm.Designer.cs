@@ -35,7 +35,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         public List<ElementId> _deletedIds = new List<ElementId>();
         public List<ElementId> _selectedElements = new List<ElementId>();
         public List<ElementId> _refConduitKick = new List<ElementId>();
-        public List<Connector> MidSaddlePt=new List<Connector>();
+        public List<Element> MidSaddlePt=new List<Element>();
         public static ChangesInformationForm instance = null;
         public string _Value = null;
 

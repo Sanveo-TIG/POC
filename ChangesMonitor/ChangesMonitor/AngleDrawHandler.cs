@@ -208,23 +208,54 @@ namespace ChangesMonitor
                                             if (isSamDirecheckline)
                                             {
                                                 //Extend
-                                                XYZ pickpoint;
+                                                XYZ pickpoint= new XYZ(0,0,0);
                                                 if (ChangesInformationForm.instance.MidSaddlePt != null)
                                                 {
-                                                  // ElementId midelm= ChangesInformationForm.instance.MidSaddlePt.Owner.Id;
-                                                    pickpoint =new XYZ( ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.X, ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.Y,0);
-                                                    LocationCurve findDirec = primarySortedElements[0].Location as LocationCurve;
-                                                    Line n = findDirec.Curve as Line;
-                                                    XYZ direc = n.Direction;
-                                                    Line picked = Line.CreateBound(new XYZ(pickpoint.X, pickpoint.Y, pickpoint.Z), pickpoint + direc.Multiply(5));
-                                                    Curve cur = picked as Curve;
-                                                    DetailCurve dtCurve = doc.Create.NewDetailCurve(doc.ActiveView, cur);
+                                                    // ElementId midelm= ChangesInformationForm.instance.MidSaddlePt.Owner.Id;
+                                                    var CongridDictionary = Utility.GroupByElements(ChangesInformationForm.instance.MidSaddlePt);
+                                                    Dictionary<double, List<Element>> grPrimary = Utility.GroupByElementsWithElevation(CongridDictionary.First().Value.Select(x => x.Conduit).ToList(), offsetVariable);
+                                                    Dictionary<double, List<Element>> grSecondary = Utility.GroupByElementsWithElevation(CongridDictionary.Last().Value.Select(x => x.Conduit).ToList(), offsetVariable);
+                                                    if (grPrimary.Count == grSecondary.Count)
+                                                    {
+                                                        for (int k = 0; k < grPrimary.Count; k++)
+                                                        {
+
+                                                            List<Element> primarySortedElem = SortbyPlane(doc, grPrimary.ElementAt(i).Value);
+
+                                                            List<Element> secondarySortedElem = SortbyPlane(doc, grSecondary.ElementAt(i).Value);
+                                                            ConnectorSet connectorSetOne=Utility.GetConnectors( primarySortedElem.FirstOrDefault());
+                                                            ConnectorSet connectorSetTwo = Utility.GetConnectors(secondarySortedElem.FirstOrDefault());
+                                                            foreach (Connector connector in connectorSetOne)
+                                                            {
+                                                                foreach(Connector connector2 in connectorSetTwo)
+                                                                {
+                                                                    ConnectorSet cs = connector.AllRefs;
+                                                                    ConnectorSet cs2 = connector2.AllRefs;
+                                                                    foreach (Connector c in cs)
+                                                                    {
+                                                                        foreach (Connector c2 in cs2)
+                                                                        {
+                                                                            if(c.Owner.Id==c2.Owner.Id)
+                                                                            {
+                                                                                pickpoint =new XYZ( c.Origin.X, c.Origin.Y,0);
+                                                                                break;
+                                                                            }
+                                                                        }
+                                                                    }    
+                                                                }
+                                                            }
+
+
+                                                        }
+                                                    }
+                                                         
 
                                                 }
                                                 else
                                                 {
                                                     pickpoint = Utility.PickPoint(uidoc);
                                                 }
+                                                if(pickpoint != null)
                                                 ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
                                             }
                                             else
@@ -449,13 +480,13 @@ namespace ChangesMonitor
                                                 XYZ pickpoint;
                                                 if (ChangesInformationForm.instance.MidSaddlePt != null)
                                                 {
-                                                    pickpoint = new XYZ(ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.X, ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.Y, 0);
+                                                   // pickpoint = new XYZ(ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.X, ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.Y, 0);
                                                 }
                                                 else
                                                 {
                                                     pickpoint = Utility.PickPoint(uidoc);
                                                 }
-                                                ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
+                                               // ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
 
                                             }
                                             else

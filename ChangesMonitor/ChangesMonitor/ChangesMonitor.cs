@@ -343,6 +343,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                         }
 
                     }
+                    ChangesInformationForm.instance.MidSaddlePt = elementlist.Distinct().ToList();
                     ChangesInformationForm.instance._elemIdone.Clear();
                     ChangesInformationForm.instance._elemIdtwo.Clear();
                     List<ElementId> FittingElem = new List<ElementId>();
@@ -367,7 +368,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                             }
                         }
                     }
-                 
+
                     List<ElementId> FittingElements = new List<ElementId>();
 
                     FittingElements = FittingElem.Distinct().ToList();
@@ -379,9 +380,8 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
                     }
                     List<ElementId> Icollector = new List<ElementId>();
-                   List<Connector> midbend = new List<Connector>();
-                    
-                  
+
+
                     for (int i = 0; i < BendElements.Count; i++)
                     {
                         ConnectorSet connector = GetConnectorSet(BendElements[i]);
@@ -391,42 +391,10 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                             foreach (Connector c in cs1)
                             {
                                 Icollector.Add(c.Owner.Id);
-                               
                             }
                         }
                     }
-                    for (int i = 0; i < BendElements.Count; i++)
-                    {
-                        for(int j=1;j<elementlist.Count;j++)
-                        {
-
-
-                        }
-                        ConnectorSet connector = GetConnectorSet(BendElements[i]);
-                        foreach (Connector connect in connector)
-                        {
-                            ConnectorSet elm1 = Utility.GetConnectors(elementlist[i]);
-                            ConnectorSet elm2 = Utility.GetConnectors(elementlist[i]);
-                            ConnectorSet cs1 = connect.AllRefs;
-                            foreach (Connector c in cs1)
-                            {
-                               
-                                try
-                                {
-                                    if (elementlist.Any(x => x.Id == connect.Owner.Id))
-                                    {
-                                        midbend.Add(connect);
-                                    }
-                                }
-                                catch
-                                {
-                                }
-                            }
-                        }
-                    }
-                   
-                    if (midbend != null)
-                    ChangesInformationForm.instance.MidSaddlePt = midbend.Distinct().ToList();
+          
                     foreach (ElementId eid in Icollector)
                     {
                         if (doc.GetElement(eid) != null && (doc.GetElement(eid).Category != null &&
