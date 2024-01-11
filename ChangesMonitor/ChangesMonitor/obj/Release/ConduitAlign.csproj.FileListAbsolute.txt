@@ -1,0 +1,313 @@
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll.config
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.pdb
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\System.ComponentModel.Annotations.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\AdpSDKCSharpWrapper.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAPIFoundation.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\PersistenceDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\UtilityAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\APIDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\GraphicsAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ElementGroupDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\EssentialsDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\GeomUtilAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\FamilyDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\DetailDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\CurtainGridFamilyDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ArrayElemsDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\HostObjDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RoomAreaPlanDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\SiteDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\SculptingDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\StructuralDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\InterfaceAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\InterfaceUtilAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RebarDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\StructuralAnalysisDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MassingDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\AssemblyDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\DPartDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\NumberingDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\PointCloudAccessAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\StairRampDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\AnalysisAppsDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDBAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\DBManagedServices.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\AdWindows.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\APIInterop.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\UIFramework.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\AddInManager.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitUIAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsUIAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\DesktopMFCAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\APIUIAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitMFCAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\EssentialsUIAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisUtilitiesAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\DetailUIAPI.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\UIFrameworkServices.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ManagedMC3.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Themes.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\Xceed.Wpf.AvalonDock.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Windows.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.pdb
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.pdb
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.pdb
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll.config
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.xml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\cs-CZ\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\de-DE\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\en-GB\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\en-US\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\es-ES\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\fr-FR\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\it-IT\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ja-JP\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ko-KR\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\pl-PL\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\pt-BR\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\ru-RU\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\zh-CN\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\bin\Release\zh-TW\AdWindows.resources.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.AssemblyReference.cache
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.g.cs
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.g.cs
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.cache
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.lref
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.baml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.baml
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.g.resources
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CoreCompileInputs.cache
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CopyComplete
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.dll
+D:\GitHub\ConPak2.0\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.pdb
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll.config
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.pdb
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdWindows.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.ComponentModel.Annotations.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ManagedMC3.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdpSDKCSharpWrapper.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdskRcManaged.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIFoundation.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitDBCoreAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\PersistenceDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UtilityAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\GraphicsAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ElementGroupDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EssentialsDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\GeomUtilAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\FamilyDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DetailDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\CurtainGridFamilyDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ArrayElemsDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\HostObjDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RoomAreaPlanDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\SiteDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\SculptingDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StructuralDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\InterfaceAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\InterfaceUtilAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RebarDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StructuralAnalysisDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MassingDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AssemblyDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DPartDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\NumberingDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\PointCloudAccessAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StairRampDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AnalysisAppsDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDBAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\IntfATFAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TextEngineAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DBManagedServices.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIInterop.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UIFramework.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AddInManager.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitUIAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsUIAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DesktopMFCAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIUIAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitMFCAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EssentialsUIAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisUtilitiesAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DetailUIAPI.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UIFrameworkServices.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Windows.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Themes.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Xceed.Wpf.AvalonDock.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\CompositionServices.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.pdb
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.pdb
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.pdb
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll.config
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.xml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\cs-CZ\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\de-DE\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\en-GB\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\en-US\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\es-ES\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\fr-FR\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\it-IT\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ja-JP\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ko-KR\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\pl-PL\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\pt-BR\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ru-RU\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\zh-CN\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\zh-TW\AdWindows.resources.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.AssemblyReference.cache
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.g.cs
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.g.cs
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.cache
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.lref
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.baml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.baml
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.g.resources
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CoreCompileInputs.cache
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CopyComplete
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.dll
+E:\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.pdb
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll.config
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ConduitAlign.pdb
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdWindows.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.ComponentModel.Annotations.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ManagedMC3.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdpSDKCSharpWrapper.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AdskRcManaged.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIFoundation.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitDBCoreAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\PersistenceDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UtilityAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\GraphicsAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ElementGroupDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EssentialsDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\GeomUtilAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\FamilyDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DetailDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\CurtainGridFamilyDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ArrayElemsDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\HostObjDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RoomAreaPlanDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\SiteDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\SculptingDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StructuralDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\InterfaceAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\InterfaceUtilAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RebarDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StructuralAnalysisDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MassingDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AssemblyDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DPartDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\NumberingDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\PointCloudAccessAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\StairRampDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AnalysisAppsDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDBAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\IntfATFAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TextEngineAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DBManagedServices.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIInterop.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UIFramework.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\AddInManager.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitUIAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\BuildingSystemsUIAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DesktopMFCAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\APIUIAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitMFCAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EssentialsUIAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\EnergyAnalysisUtilitiesAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\DetailUIAPI.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\UIFrameworkServices.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Windows.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Autodesk.UI.Themes.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Xceed.Wpf.AvalonDock.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\CompositionServices.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignColors.pdb
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\Newtonsoft.Json.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPI.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAPIUI.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.CodeDom.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\System.Net.Http.Formatting.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.pdb
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\TIGUtility.dll.config
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\RevitAddInUtility.xml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\cs-CZ\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\de-DE\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\en-GB\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\en-US\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\es-ES\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\fr-FR\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\it-IT\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ja-JP\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ko-KR\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\pl-PL\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\pt-BR\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\ru-RU\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\zh-CN\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\bin\Release\zh-TW\AdWindows.resources.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.AssemblyReference.cache
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.g.cs
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.g.cs
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.cache
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign_MarkupCompile.lref
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\ParentUserControl.baml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\MVVM\View\MainWindow.baml
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.g.resources
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CoreCompileInputs.cache
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.csproj.CopyComplete
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.dll
+C:\darwin\FINAL SOURCE PATH\GITHUB_SANVEO\Sanveo-TIG 2022\ConPak2.0\Basic\ConduitAlign\ConduitAlign\obj\Release\ConduitAlign.pdb

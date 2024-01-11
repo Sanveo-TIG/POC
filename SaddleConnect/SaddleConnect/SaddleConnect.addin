@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command SaddleConnect</Text>
+    <Discription>Some Discription for SaddleConnect</Discription>
+    <Assembly>SaddleConnect.dll</Assembly>
+    <FullClassName>SaddleConnect.Command</FullClassName>
+    <ClientId>9d73c2d8-a5da-4c60-b165-999c8545ed9b</ClientId>
+    <VendorId>www.Sanveo.com</VendorId>
+    <VendorDiscription>Sanveo Inc</VendorDiscription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application SaddleConnect</Name>
+    <Assembly>SaddleConnect.dll</Assembly>
+    <FullClassName>SaddleConnect.App</FullClassName>
+    <ClientId>5744d6ab-e75a-4422-9674-df38dbd2e7bf</ClientId>
+    <VendorId>www.qosteq.com</VendorId>
+    <VendorDiscription>Sanveo Inc</VendorDiscription>
+  </AddIn>
+</RevitAddIns>

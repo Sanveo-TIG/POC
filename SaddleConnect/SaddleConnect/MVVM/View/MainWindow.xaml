@@ -1,0 +1,131 @@
+﻿<Window x:Class="SaddleConnect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:customUC="clr-namespace:TIGUtility;assembly=TIGUtility"
+        xmlns:uc="clr-namespace:SaddleConnect"
+        Background="#E5EEF5"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
+        FontFamily="/SaddleConnect;component/Resources/Font/#Poppins Medium"  >
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"   />
+     
+        
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Snackbar.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="PrimaryHueLightBrush"
+                             Color="#005D9A" />
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush"
+                             Color="#333333" />
+            <SolidColorBrush x:Key="PrimaryHueMidBrush"
+                             Color="#005D9A" />
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush"
+                             Color="#FFFFFF" />
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush"
+                             Color="#005D9A" />
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush"
+                             Color="#FFFFFF" />
+            <!--ACCENT-->
+            <SolidColorBrush x:Key="SecondaryAccentBrush"
+                             Color="#005D9A" />
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush"
+                             Color="#FFFFFF" />
+            
+            <!--<Style x:Key="customDesign"
+                   TargetType="Button">
+               
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+                             Value="True">
+                        <Setter Property="Foreground"
+                                Value="Red" />
+                        <Setter Property="Background"
+                                Value="red"></Setter>
+                        <Setter Property="BorderBrush"
+                                Value="Transparent" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver"
+                             Value="False">
+                        <Setter Property="Foreground"
+                                Value="Green" />
+                        <Setter Property="Background"
+                                Value="Transparent"></Setter>
+                        <Setter Property="BorderBrush"
+                                Value="Transparent" />
+                    </Trigger>
+                </Style.Triggers>
+
+
+            </Style>-->
+            
+        </ResourceDictionary>
+       
+        <!--// Tooltip Style Template //-->
+        <!--// App Close Button Style Template //-->
+    </Window.Resources>
+    
+    <DockPanel x:Name="RootWindow"
+               Background="#E5EEF5"><!--E5EEF5-->
+
+        <!--HEADER-->
+        <DockPanel x:Name="TitleBar"
+                   DockPanel.Dock="Top">
+            <customUC:HeaderPanelControl Tittle="Three Point Saddle" x:Name="HeaderPanel"
+                                       
+                                             DocumentPath="Vconnect.html"></customUC:HeaderPanelControl>
+        </DockPanel>
+
+        <materialDesign:DialogHost x:Name="rootDialogHost"
+                                   Identifier="SaddleConnectRootDialog"
+                                   DialogTheme="Inherit">
+            <Border BorderThickness="1 0 1 0"
+                    BorderBrush="#f2f2f2">
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--MAIN CONTENT-->
+               
+                    <Grid x:Name="Container"
+                          Grid.Row="0"
+                          Margin="16">
+                   
+                           
+                    <!--<local:SaddleConnectUserControl></local:SaddleConnectUserControl>-->
+                       
+            </Grid>
+              
+                <Grid   VerticalAlignment="Bottom"
+                    >
+                    <materialDesign:Snackbar  HorizontalAlignment="Stretch"
+                                             x:Name="SnackbarSeven"
+                                             MessageQueue="{materialDesign:MessageQueue}">
+                          
+
+                    </materialDesign:Snackbar>
+                    
+                </Grid>
+                <!--FOOTER-->
+                    <customUC:FooterPanelControl Grid.Row="1"
+                                                     x:Name="FooterPanel">
+                    </customUC:FooterPanelControl>
+                </Grid>
+                </Border>
+        </materialDesign:DialogHost>
+    </DockPanel>
+  
+
+</Window>
