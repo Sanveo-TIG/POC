@@ -290,8 +290,8 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
         public Autodesk.Revit.UI.RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "Auto Conduit Modifier"; // Archcorp
-            string ribbonPanelText = "Modifier"; // Architecture
+            string tab = "Sanveo Tools"; // Archcorp
+            string ribbonPanelText = "AutoUpdator"; // Architecture
 
             // Empty ribbon panel 
             Autodesk.Revit.UI.RibbonPanel ribbonPanel = null;
