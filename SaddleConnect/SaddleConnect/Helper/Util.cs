@@ -12,7 +12,7 @@ namespace SaddleConnect
         public static string ProjectName = "SaddleConnect";
         public const string AddinRibbonTabName = "Sanveo Tools";
         public const string InstallerFolderName = "SNVAddins";
-      public const string AddinRibbonPanel = "Connecting Tools";
+      public const string AddinRibbonPanel = "ConPak Tools";
         public const string ProductVersion = "Public";
 
         public const string ApplicationWindowTitle ="ConPak Tools";
