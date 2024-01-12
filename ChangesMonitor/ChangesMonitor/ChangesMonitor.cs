@@ -183,6 +183,9 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
             if (s == "OFF")
             {
+                ProjectParameterHandler projectParameterHandler = new ProjectParameterHandler();
+                ExternalEvent Event = ExternalEvent.Create(projectParameterHandler);
+                Event.Raise();
                 ToggleConPakToolsButton.LargeImage = OnLargeImage;
                 ToggleConPakToolsButton.Image = OnImage;
 
