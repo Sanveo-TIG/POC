@@ -189,12 +189,12 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
                 foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
                 {
-                    if (tab.Title.Equals("Auto Conduit Modifier"))
+                    if (tab.Title.Equals("Sanveo Tools"))
                     {
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
 
-                            if (panel.Source.AutomationName == "Modifier")
+                            if (panel.Source.AutomationName == "AutoUpdator")
                             {
                                 RibbonItemCollection collctn = panel.Source.Items;
 
@@ -228,12 +228,12 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
                 foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
                 {
-                    if (tab.Title.Equals("Auto Conduit Modifier"))
+                    if (tab.Title.Equals("Sanveo Tools"))
                     {
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
 
-                            if (panel.Source.AutomationName == "Modifier")
+                            if (panel.Source.AutomationName == "AutoUpdator")
                             {
                                 RibbonItemCollection collctn = panel.Source.Items;
                                 foreach (Autodesk.Windows.RibbonItem ri in collctn)
