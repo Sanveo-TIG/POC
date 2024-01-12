@@ -197,7 +197,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
 
-                            if (panel.Source.AutomationName == "AutoUpdator")
+                            if (panel.Source.AutomationName == "AutoUpdater")
                             {
                                 RibbonItemCollection collctn = panel.Source.Items;
 
@@ -236,7 +236,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
 
-                            if (panel.Source.AutomationName == "AutoUpdator")
+                            if (panel.Source.AutomationName == "AutoUpdater")
                             {
                                 RibbonItemCollection collctn = panel.Source.Items;
                                 foreach (Autodesk.Windows.RibbonItem ri in collctn)
@@ -294,7 +294,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         public Autodesk.Revit.UI.RibbonPanel RibbonPanel(UIControlledApplication a)
         {
             string tab = "Sanveo Tools"; // Archcorp
-            string ribbonPanelText = "AutoUpdator"; // Architecture
+            string ribbonPanelText = "AutoUpdater"; // Architecture
 
             // Empty ribbon panel 
             Autodesk.Revit.UI.RibbonPanel ribbonPanel = null;
