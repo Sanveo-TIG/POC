@@ -208,7 +208,7 @@ namespace ChangesMonitor
                                             if (isSamDirecheckline)
                                             {
                                                 //Extend
-                                                XYZ pickpoint= new XYZ(0,0,0);
+                                                XYZ pickpoint = null;
                                                 if (ChangesInformationForm.instance.MidSaddlePt != null)
                                                 {
                                                     // ElementId midelm= ChangesInformationForm.instance.MidSaddlePt.Owner.Id;
@@ -217,17 +217,39 @@ namespace ChangesMonitor
                                                     Dictionary<double, List<Element>> grSecondary = Utility.GroupByElementsWithElevation(CongridDictionary.Last().Value.Select(x => x.Conduit).ToList(), offsetVariable);
                                                     if (grPrimary.Count == grSecondary.Count)
                                                     {
-                                                        for (int k = 0; k < grPrimary.Count; k++)
+                                                      
+
+                                                        List<Element> primarySortedElem = SortbyPlane(doc, grPrimary.ElementAt(i).Value);
+
+                                                        List<Element> secondarySortedElem = SortbyPlane(doc, grSecondary.ElementAt(i).Value);
+                                                        ConnectorSet connectorSetOne = Utility.GetConnectors(primarySortedElem.FirstOrDefault());
+                                                        ConnectorSet connectorSetTwo = Utility.GetConnectors(secondarySortedElem.FirstOrDefault());
+                                                        foreach (Connector connector in connectorSetOne)
                                                         {
-
-                                                            List<Element> primarySortedElem = SortbyPlane(doc, grPrimary.ElementAt(i).Value);
-
-                                                            List<Element> secondarySortedElem = SortbyPlane(doc, grSecondary.ElementAt(i).Value);
-                                                            ConnectorSet connectorSetOne=Utility.GetConnectors( primarySortedElem.FirstOrDefault());
-                                                            ConnectorSet connectorSetTwo = Utility.GetConnectors(secondarySortedElem.FirstOrDefault());
+                                                            foreach (Connector connector2 in connectorSetTwo)
+                                                            {
+                                                                ConnectorSet cs = connector.AllRefs;
+                                                                ConnectorSet cs2 = connector2.AllRefs;
+                                                                foreach (Connector c in cs)
+                                                                {
+                                                                    foreach (Connector c2 in cs2)
+                                                                    {
+                                                                        if (c.Owner.Id == c2.Owner.Id)
+                                                                        {
+                                                                            pickpoint = new XYZ(c.Origin.X, c.Origin.Y, 0);
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        if(pickpoint==null)
+                                                        {
+                                                             connectorSetOne = Utility.GetConnectors(primarySortedElem.LastOrDefault());
+                                                             connectorSetTwo = Utility.GetConnectors(secondarySortedElem.FirstOrDefault());
                                                             foreach (Connector connector in connectorSetOne)
                                                             {
-                                                                foreach(Connector connector2 in connectorSetTwo)
+                                                                foreach (Connector connector2 in connectorSetTwo)
                                                                 {
                                                                     ConnectorSet cs = connector.AllRefs;
                                                                     ConnectorSet cs2 = connector2.AllRefs;
@@ -235,28 +257,31 @@ namespace ChangesMonitor
                                                                     {
                                                                         foreach (Connector c2 in cs2)
                                                                         {
-                                                                            if(c.Owner.Id==c2.Owner.Id)
+                                                                            if (c.Owner.Id == c2.Owner.Id)
                                                                             {
-                                                                                pickpoint =new XYZ( c.Origin.X, c.Origin.Y,0);
+                                                                                pickpoint = new XYZ(c.Origin.X, c.Origin.Y, 0);
                                                                                 break;
                                                                             }
                                                                         }
-                                                                    }    
+                                                                    }
                                                                 }
                                                             }
-
-
                                                         }
+
+                                                     
                                                     }
-                                                         
+
 
                                                 }
                                                 else
                                                 {
                                                     pickpoint = Utility.PickPoint(uidoc);
                                                 }
-                                                if(pickpoint != null)
-                                                ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
+                                              
+                                                if (pickpoint != null)
+                                                {
+                                                    ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
+                                                }
                                             }
                                             else
                                             {
@@ -477,16 +502,55 @@ namespace ChangesMonitor
                                             if (isSamDirecheckline)
                                             {
                                                 //Extend
-                                                XYZ pickpoint;
+                                                XYZ pickpoint = new XYZ();
                                                 if (ChangesInformationForm.instance.MidSaddlePt != null)
                                                 {
-                                                   // pickpoint = new XYZ(ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.X, ChangesInformationForm.instance.MidSaddlePt.LastOrDefault().Origin.Y, 0);
+                                                    // ElementId midelm= ChangesInformationForm.instance.MidSaddlePt.Owner.Id;
+                                                    var CongridDictionary = Utility.GroupByElements(ChangesInformationForm.instance.MidSaddlePt);
+                                                    Dictionary<double, List<Element>> grPrimary = Utility.GroupByElementsWithElevation(CongridDictionary.First().Value.Select(x => x.Conduit).ToList(), offsetVariable);
+                                                    Dictionary<double, List<Element>> grSecondary = Utility.GroupByElementsWithElevation(CongridDictionary.Last().Value.Select(x => x.Conduit).ToList(), offsetVariable);
+                                                    if (grPrimary.Count == grSecondary.Count)
+                                                    {
+                                                        for (int j = 0; j < grPrimary.Count; j++)
+                                                        {
+
+                                                            List<Element> primarySortedElem = SortbyPlane(doc, grPrimary.ElementAt(j).Value);
+
+                                                            List<Element> secondarySortedElem = SortbyPlane(doc, grSecondary.ElementAt(j).Value);
+                                                            ConnectorSet connectorSetOne = Utility.GetConnectors(primarySortedElem.FirstOrDefault());
+                                                            ConnectorSet connectorSetTwo = Utility.GetConnectors(secondarySortedElem.FirstOrDefault());
+                                                            foreach (Connector connector in connectorSetOne)
+                                                            {
+                                                                foreach (Connector connector2 in connectorSetTwo)
+                                                                {
+                                                                    ConnectorSet cs = connector.AllRefs;
+                                                                    ConnectorSet cs2 = connector2.AllRefs;
+                                                                    foreach (Connector c in cs)
+                                                                    {
+                                                                        foreach (Connector c2 in cs2)
+                                                                        {
+                                                                            if (c.Owner.Id == c2.Owner.Id)
+                                                                            {
+                                                                                pickpoint = new XYZ(c.Origin.X, c.Origin.Y, 0);
+                                                                                break;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
+
+                                                        }
+                                                    }
+
+
                                                 }
                                                 else
                                                 {
                                                     pickpoint = Utility.PickPoint(uidoc);
                                                 }
-                                               // ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
+                                                if (pickpoint != null)
+                                                    ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
 
                                             }
                                             else
@@ -1525,7 +1589,7 @@ namespace ChangesMonitor
                             XYZ direc = ncl.Direction;
                             Conduit newCon = null;
                             Conduit newCon2 = null;
-                           
+
                             if (true)//ParentUserControl.Instance.tagControl.SelectedIndex == 2)
                             {
                                 if (dir.X == 1)
