@@ -1984,8 +1984,10 @@ namespace ChangesMonitor
                                         {
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            else if(direct.X == 1 && directDown.X == 1)
+                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                             else
-                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                         }
                                         else
                                         {
@@ -2123,10 +2125,12 @@ namespace ChangesMonitor
                                         {
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            else if (direct.X == 1 && directDown.X == 1)
+                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                             else
-                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                         }
-                                        else
+                                        else 
                                         {
 
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
