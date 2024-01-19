@@ -415,7 +415,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                             Element elemOne = BendElements[i];
                             Element elemTwo = BendElements[j];
                             Parameter parameter = elemOne.LookupParameter("Angle");
-                           MessageBox.Show( parameter.AsValueString());
                             if (parameter.AsValueString() == "90.00°"|| parameter.AsValueString() == "90°")
                             {
                                 ConnectorSet firstconnector = GetConnectorSet(elemOne);

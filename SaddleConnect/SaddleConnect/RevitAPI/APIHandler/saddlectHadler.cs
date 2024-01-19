@@ -966,6 +966,8 @@ namespace SaddleConnect
                                         {
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            else if (direct.X == 1 && directDown.X == 1)
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                         }
@@ -1086,6 +1088,8 @@ namespace SaddleConnect
                                         else
                                         {
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            else if (direct.X == 1 && directDown.X == 1)
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
@@ -1246,7 +1250,7 @@ namespace SaddleConnect
 
                         tx.Commit();
                         doc.Regenerate();
-                        _ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Completed", "Vertical Offset", Util.ProductVersion, "Connect");
+                       // _ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Completed", "Vertical Offset", Util.ProductVersion, "Connect");
 
                     }
                     using (SubTransaction tx = new SubTransaction(doc))
@@ -1260,14 +1264,14 @@ namespace SaddleConnect
                 {
                     string message = string.Format("Make sure conduits are aligned to each other properly, if not please align primary conduit to secondary conduit. Error :{0}", ex.Message);
                     System.Windows.MessageBox.Show("Warning. \n" + message, "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    _ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Failed", "Vertical Offset", Util.ProductVersion, "Connect");
+                    //_ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Failed", "Vertical Offset", Util.ProductVersion, "Connect");
 
                 }
             }
             catch (Exception exception)
             {
                 System.Windows.MessageBox.Show("Warning. \n" + exception.Message, "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
-                _ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Failed", "Vertical Offset", Util.ProductVersion, "Connect");
+               // _ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Failed", "Vertical Offset", Util.ProductVersion, "Connect");
             }
         }
         public void FourPtSaddleExecute(UIApplication uiapp, ref List<Element> PrimaryElements, ref List<Element> SecondaryElements)

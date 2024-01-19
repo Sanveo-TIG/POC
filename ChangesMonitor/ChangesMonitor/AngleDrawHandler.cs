@@ -1974,6 +1974,8 @@ namespace ChangesMonitor
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                             else if (direct.Y == 1 && directDown.Y == 1)
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            else if (direct.X == 1 && directDown.X == 1)
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                         }
@@ -2114,6 +2116,8 @@ namespace ChangesMonitor
                                             if (direct.X == -1 && directDown.X == 1 || direct.Y == -1 && directDown.Y == 1)
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                             else if (direct.Y == 1 && directDown.Y == 1)
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            else if (direct.X == 1 && directDown.X == 1)
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
