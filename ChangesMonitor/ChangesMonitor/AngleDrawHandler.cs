@@ -669,7 +669,7 @@ namespace ChangesMonitor
                     }
                 }
                 SelectedElements.Clear();
-
+                uidoc.Selection.SetElementIds(new List<ElementId> { ElementId.InvalidElementId });
 
             }
             catch (Exception ex)
