@@ -1965,6 +1965,17 @@ namespace ChangesMonitor
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                             else if (direct.Y == -1 && directDown.Y == -1)
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            else if (direct.X == -1 && directDown.X == -1)
+                                            {
+                                                if (pickedline.Origin.Y < axisSt.Y)
+                                                {
+                                                    Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                                }
+                                                else //up
+                                                {
+                                                    Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                                }
+                                            }
                                             else
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                         }
@@ -2108,6 +2119,17 @@ namespace ChangesMonitor
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                             else if (direct.Y == -1 && directDown.Y == -1)
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            else if (direct.X == -1 && directDown.X == -1)
+                                            {
+                                                if (pickedline.Origin.Y < axisSt.Y)
+                                                {
+                                                    Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                                }
+                                                else
+                                                {
+                                                    Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                                }
+                                            }
                                             else
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                         }
