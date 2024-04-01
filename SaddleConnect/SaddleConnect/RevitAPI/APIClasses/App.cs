@@ -90,7 +90,6 @@ namespace SaddleConnect
             string dllLocation = Path.Combine(executableLocation, "SaddleConnect.dll");
 
             // Create two push buttons
-
             PushButtonData buttondata = new PushButtonData("SaddleConnectBtn", buttonText, dllLocation, "SaddleConnect.Command")
             {
                 ToolTip = buttonTooltip

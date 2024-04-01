@@ -116,7 +116,7 @@ namespace SaddleConnect
         }
         private void InitializeHandlers()
         {
-            _externalEvents.Add(ExternalEvent.Create(new SaddleConnectHandler()));
+           
             _externalEvents.Add(ExternalEvent.Create(new saddlectHadler()));
           
         }

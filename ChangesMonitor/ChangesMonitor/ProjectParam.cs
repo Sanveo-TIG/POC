@@ -57,7 +57,7 @@ namespace ChangesMonitor
                             {
                                 Autodesk.Revit.DB.Binding binding = UiApp.Application.Create.NewInstanceBinding(catSet_FORCUID);
                                 BindingMap map = (new UIApplication(UiApp.Application)).ActiveUIDocument.Document.ParameterBindings;
-                                map.Insert(def, binding, def.Name == "Bend Angle" ? BuiltInParameterGroup.PG_IDENTITY_DATA : def.ParameterGroup);
+                                map.Insert(def, binding, def.Name == "Bend Angle" ? BuiltInParameterGroup.PG_CONSTRAINTS : def.ParameterGroup);
                             }
                         }
                     }

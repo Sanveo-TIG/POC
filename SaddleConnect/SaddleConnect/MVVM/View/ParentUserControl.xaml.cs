@@ -72,7 +72,7 @@ namespace SaddleConnect
                         Console.WriteLine(ex.Message);
                     }
                 }
-                _externalEvents[1].Raise();
+                _externalEvents[0].Raise();
 
 
             }

@@ -33,7 +33,7 @@ namespace SaddleConnect
             try
             {
 
-                if (true)//Utility.HasValidLicense(commandData.Application.Application.Username, Util.ProductVersion))
+                if (true)//Utility.HasValidLicense(Util.ProductVersion))
                 {
                     CustomUIApplication customUIApplication = new CustomUIApplication
                     {

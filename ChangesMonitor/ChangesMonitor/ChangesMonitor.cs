@@ -192,7 +192,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
                 foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
                 {
-                    if (tab.Title.Equals("Sanveo Tools"))
+                    if (tab.Title.Equals("Sanveo Beta"))
                     {
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
@@ -231,7 +231,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
                 foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
                 {
-                    if (tab.Title.Equals("Sanveo Tools"))
+                    if (tab.Title.Equals("Sanveo Beta"))
                     {
                         foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
                         {
@@ -293,7 +293,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
         public Autodesk.Revit.UI.RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "Sanveo Tools"; // Archcorp
+            string tab = "Sanveo Beta"; // Archcorp
             string ribbonPanelText = "AutoUpdater"; // Architecture
 
             // Empty ribbon panel 
@@ -425,7 +425,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                                     {
                                         RefID.Add(c.Owner.Id);
                                     }
-
                                 }
                             }
                             ChangesInformationForm.instance._refConduitKick.AddRange(RefID);
