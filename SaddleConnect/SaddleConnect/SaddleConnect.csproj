@@ -166,7 +166,6 @@
     <Compile Include="RevitAPI\APICommon\Common.cs" />
     <Compile Include="RevitAPI\APICommon\HorizontalOffset.cs" />
     <Compile Include="RevitAPI\APIHandler\saddlectHadler.cs" />
-    <Compile Include="RevitAPI\APIHandler\SaddleConnectHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MVVM\View\ParentUserControl.xaml">

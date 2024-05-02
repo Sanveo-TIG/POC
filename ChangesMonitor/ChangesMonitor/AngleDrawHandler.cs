@@ -244,7 +244,7 @@ namespace ChangesMonitor
                                                                 }
                                                             }
                                                         }
-                                                      
+
                                                     }
                                                 }
                                                 else
@@ -254,7 +254,7 @@ namespace ChangesMonitor
 
                                                 if (pickpoint != null)
                                                     ThreePtSaddleExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements, pickpoint);
-                                                
+
                                             }
                                             else
                                             {
@@ -660,7 +660,7 @@ namespace ChangesMonitor
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-               
+
             }
             finally
             {
@@ -1428,54 +1428,40 @@ namespace ChangesMonitor
                 Utility.GetClosestConnectors(PrimaryElements[0], SecondaryElements[0], out ConnectOne, out ConnectTwo);
                 XYZ ax = ConnectOne.Origin;
                 Line pickline = null;
-                if (true)
+
+                pickline = Line.CreateBound(pickpoint, pickpoint + new XYZ(dire.X + 10, dire.Y, dire.Z));
+                if (dire.X == 1 || dire.X == -1)
                 {
-                    pickline = Line.CreateBound(pickpoint, pickpoint + new XYZ(dire.X + 10, dire.Y, dire.Z));
-                    if (dire.X == 1)
+                    if (pickline.Origin.Y < ax.Y)
                     {
-                        if (pickline.Origin.Y < ax.Y)
-                        {
-                            PrimaryElements = GetElementsByOderDescending(PrimaryElements);
-                            SecondaryElements = GetElementsByOderDescending(SecondaryElements);
-                        }
-                        else
-                        {
-                            PrimaryElements = GetElementsByOder(PrimaryElements);
-                            SecondaryElements = GetElementsByOder(SecondaryElements);
-                        }
+                        PrimaryElements = GetElementsByOderDescending(PrimaryElements);
+                        SecondaryElements = GetElementsByOderDescending(SecondaryElements);
                     }
-                    else if (dire.Y == -1)
+                    else
                     {
                         PrimaryElements = GetElementsByOder(PrimaryElements);
                         SecondaryElements = GetElementsByOder(SecondaryElements);
-                        /*if (pickline.Origin.X < ax.X)
-                        {
-                            PrimaryElements = APICommon.GetElementsByOder(PrimaryElements);
-                            SecondaryElements = APICommon.GetElementsByOder(SecondaryElements);
-                        }
-                        else
-                        {
-                            PrimaryElements = GetElementsByOder(PrimaryElements);
-                            SecondaryElements = GetElementsByOder(SecondaryElements);
-                        }*/
                     }
-                    else if (dire.Y == 1)
-                    {
-                        if (pickline.Origin.X < ax.X)
-                        {
-                            PrimaryElements = GetElementsByOderDescending(PrimaryElements);
-                            SecondaryElements = GetElementsByOderDescending(SecondaryElements);
-                        }
+                }
+                else if (dire.Y == -1 || dire.Y == 1)
+                {
 
-                        else
-                        {
-                            PrimaryElements = GetElementsByOder(PrimaryElements);
-                            SecondaryElements = GetElementsByOder(SecondaryElements);
-                        }
-                    }
-                    else if (dire.X == -1)
+                    if (pickline.Origin.X < ax.X)
                     {
-                        if (pickline.Origin.Y < ax.Y)
+                        PrimaryElements = GetElementsByOderDescending(PrimaryElements);
+                        SecondaryElements = GetElementsByOderDescending(SecondaryElements);
+                    }
+                    else
+                    {
+                        PrimaryElements = GetElementsByOder(PrimaryElements);
+                        SecondaryElements = GetElementsByOder(SecondaryElements);
+                    }
+                }
+                else
+                {
+                    if (pickline.Origin.X < ax.X)
+                    {
+                        if (dire.X == -1)
                         {
                             PrimaryElements = GetElementsByOderDescending(PrimaryElements);
                             SecondaryElements = GetElementsByOderDescending(SecondaryElements);
@@ -1490,34 +1476,19 @@ namespace ChangesMonitor
                     {
                         if (pickline.Origin.X < ax.X)
                         {
-                            if (dire.X == -1)
-                            {
-                                PrimaryElements = GetElementsByOderDescending(PrimaryElements);
-                                SecondaryElements = GetElementsByOderDescending(SecondaryElements);
-                            }
-                            else
-                            {
-                                PrimaryElements = GetElementsByOder(PrimaryElements);
-                                SecondaryElements = GetElementsByOder(SecondaryElements);
-                            }
+
+                            PrimaryElements = GetElementsByOderDescending(PrimaryElements);
+                            SecondaryElements = GetElementsByOderDescending(SecondaryElements);
                         }
                         else
                         {
-                            if (pickline.Origin.X < ax.X)
-                            {
-
-                                PrimaryElements = GetElementsByOderDescending(PrimaryElements);
-                                SecondaryElements = GetElementsByOderDescending(SecondaryElements);
-                            }
-                            else
-                            {
-                                PrimaryElements = GetElementsByOder(PrimaryElements);
-                                SecondaryElements = GetElementsByOder(SecondaryElements);
-                            }
+                            PrimaryElements = GetElementsByOder(PrimaryElements);
+                            SecondaryElements = GetElementsByOder(SecondaryElements);
                         }
                     }
                 }
-              
+
+
                 List<Element> thirdElements = new List<Element>();
                 List<Element> forthElements = new List<Element>();
                 bool isVerticalConduits = false;
@@ -1532,25 +1503,7 @@ namespace ChangesMonitor
                         Connector ConnectorTwo = null;
 
                         tx.Start();
-                        /* Line picked = null;
-                         LocationCurve newcurve = PrimaryElements.LastOrDefault().Location as LocationCurve;
-                         Line ncl = newcurve.Curve as Line;
-                         XYZ direc = ncl.Direction;
-                         picked = Line.CreateBound(new XYZ(pickpoint.X, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X , direc.Y, direc.Z));
-                         Curve cur = picked as Curve;
-                         // Create the DetailCurve element
-                        // DetailCurve dtCurve = doc.Create.NewDetailCurve(doc.ActiveView, cur);*/
-                        /* var s = uidoc.Selection.PickObject(ObjectType.Element, filter, "Select Tag");
-                         IndependentTag refTag = doc.GetElement(s) as IndependentTag;
-                         var re = refTag.get*/
                         double l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
-                       
-                        /* if (!string.IsNullOrEmpty(ParentUserControl.Instance.txtheight.Text))
-                         {
-                             offSet = ParentUserControl.Instance.txtheight.AsDouble;
-                             basedistance = (l_angle * (180 / Math.PI)) == 90 ? 1 : offSet / Math.Tan(l_angle);
-                         }*/
-
                         double givendist = 0;
                         for (int i = 0; i < PrimaryElements.Count; i++)
                         {
@@ -1576,194 +1529,164 @@ namespace ChangesMonitor
                             var middle = parameter.AsDouble();
                             XYZ Pri_mid = Utility.GetMidPoint(newConCopy);
                             XYZ Sec_mid = Utility.GetMidPoint(newCon2Copy);
-                            /* Conduit newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, ConnectorOne.Origin, Pri_mid);
-                             Conduit newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, ConnectorTwo.Origin, Sec_mid);*/
+
                             double distance = 0;
+                            DistanceElements = Utility.ConduitInOrder(DistanceElements);
                             LocationCurve newcurve = DistanceElements[0].Location as LocationCurve;
+                            Line ncl = newcurve.Curve as Line;
+                            XYZ direc = ncl.Direction;
                             if (DistanceElements.Count() >= 2)
                             {
                                 LocationCurve newcurve2 = DistanceElements[1].Location as LocationCurve;
-                                XYZ start1 = newcurve.Curve.GetEndPoint(0);
-                                XYZ start2 = newcurve2.Curve.GetEndPoint(0);
+                                XYZ start1 = Utility.GetMidPoint(DistanceElements[0]);
+                                Line cross = Utility.CrossProductLine(ncl, start1, 5, true);
+                                start1 = new XYZ(start1.X, start1.Y, 0);
+                                XYZ start2 = Utility.FindIntersection(DistanceElements[1], cross);
                                 distance = start1.DistanceTo(start2);
                             }
-                            Line ncl = newcurve.Curve as Line;
-                            XYZ direc = ncl.Direction;
                             Conduit newCon = null;
                             Conduit newCon2 = null;
                             var l = Utility.GetLineFromConduit(newConCopy);
                             MPtAngle = Utility.GetMidPoint(l);
-                            if (true)
+
+                            if (IsHorizontal(ncDer))
                             {
-                                if (dir.X == 1)
+                                if (pickline.Origin.Y < ax.Y)
                                 {
-                                    if (pickline.Origin.Y < ax.Y)
+                                    if (i == 0)
                                     {
-                                        if (i == 0)
-                                        {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X + 3, direc.Y, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X - 3, direc.Y, direc.Z));
-                                        }
-                                        else
-                                        {
-                                            givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 3, direc.Y - givendist, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 3, direc.Y - givendist, direc.Z));
-                                        }
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X + 3, direc.Y, direc.Z));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X - 3, direc.Y, direc.Z));
                                     }
                                     else
                                     {
+                                        givendist += distance;
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 3, direc.Y - givendist, direc.Z));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 3, direc.Y - givendist, direc.Z));
+                                    }
+                                }
+                                else
+                                {
+                                    if (i == 0)
+                                    {
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X + 3, direc.Y, direc.Z));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X - 3, direc.Y, direc.Z));
+
+                                    }
+                                    else
+                                    {
+                                        givendist += distance;
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 3, direc.Y + givendist, direc.Z));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 3, direc.Y + givendist, direc.Z));
+                                    }
+                                }
+                            }
+                            else if (IsVertical(ncDer)) //vertical
+                            {
+                                if (pickline.Origin.X < ax.X)
+                                {
+                                    if (i == 0)
+                                    {
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(.5));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-.5));
+                                    }
+                                    else
+                                    {
+
+                                        givendist += distance;
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X - givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X - givendist, direc.Y - .5, direc.Z));////
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X - givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X - givendist, direc.Y - .5, direc.Z));
+                                    }
+                                }
+                                else //right
+                                {
+                                    if (i == 0)
+                                    {
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(.5));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-.5));
+                                    }
+                                    else
+                                    {
+
+                                        givendist += distance;
+                                        newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y + .5, direc.Z));
+                                        newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y - .5, direc.Z));
+                                    }
+                                }
+                            }
+                            else //angled
+                            {
+                                if (dir.X > 0)
+                                {
+                                    if (pickline.Origin.X < MPtAngle.X) //left
+                                    {
                                         if (i == 0)
                                         {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X + 3, direc.Y, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X - 3, direc.Y, direc.Z));
-
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
                                         }
                                         else
                                         {
+
                                             givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 3, direc.Y + givendist, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 3, direc.Y + givendist, direc.Z));
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
+                                        }
+                                    }
+                                    else //right
+                                    {
+                                        if (i == 0)
+                                        {
+                                            XYZ end = pickpoint + new XYZ(direc.X, direc.Y, direc.Z);
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, end);
+                                        }
+                                        else
+                                        {
+
+                                            givendist += distance;
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));////
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
                                         }
                                     }
                                 }
-                                else if (dir.X == -1)
+                                else
                                 {
-                                    if (pickline.Origin.Y < ax.Y)
+                                    if (pickline.Origin.X < MPtAngle.X) //left
                                     {
                                         if (i == 0)
                                         {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(2));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-2));
-                                        }
-                                        else
-                                        {
-                                            givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 2, direc.Y - givendist, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y - givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 2, direc.Y - givendist, direc.Z));
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (i == 0)
-                                        {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(2));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-2));
-                                        }
-                                        else
-                                        {
-                                            givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X + 2, direc.Y + givendist, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X, pickpoint.Y + givendist, pickpoint.Z), pickpoint + new XYZ(direc.X - 2, direc.Y + givendist, direc.Z));
-                                        }
-                                    }
-                                }
-                                else if (dir.Y == -1) //vertical
-                                {
-                                    if (pickline.Origin.X < ax.X)
-                                    {
-                                        if (i == 0)
-                                        {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(.5));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-.5));
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
                                         }
                                         else
                                         {
 
                                             givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y - .5, direc.Z));////
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y - .5, direc.Z));
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
                                         }
                                     }
-                                    else
+                                    else //right
                                     {
                                         if (i == 0)
                                         {
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(.5));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + direc.Multiply(-.5));
+                                            XYZ end = pickpoint + new XYZ(direc.X, direc.Y, direc.Z);
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, end);
                                         }
                                         else
                                         {
 
                                             givendist += distance;
-                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y + .5, direc.Z));
-                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y - .5, direc.Z));
-                                        }
-                                    }
-                                }
-                                else //angled
-                                {
-                                    if (dir.X > 0)
-                                    {
-                                        if (pickline.Origin.X < MPtAngle.X) //left
-                                        {
-                                            if (i == 0)
-                                            {
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                            }
-                                            else
-                                            {
-
-                                                givendist += distance;
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                            }
-                                        }
-                                        else //right
-                                        {
-                                            if (i == 0)
-                                            {
-                                                XYZ end = pickpoint + new XYZ(direc.X, direc.Y, direc.Z);
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, end);
-                                            }
-                                            else
-                                            {
-
-                                                givendist += distance;
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));////
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (pickline.Origin.X < MPtAngle.X) //left
-                                        {
-                                            if (i == 0)
-                                            {
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                            }
-                                            else
-                                            {
-
-                                                givendist += distance;
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                            }
-                                        }
-                                        else //right
-                                        {
-                                            if (i == 0)
-                                            {
-                                                XYZ end = pickpoint + new XYZ(direc.X, direc.Y, direc.Z);
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, pickpoint, pickpoint + new XYZ(direc.X, direc.Y, direc.Z));
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, pickpoint, end);
-                                            }
-                                            else
-                                            {
-
-                                                givendist += distance;
-                                                newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));////
-                                                newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
-                                            }
+                                            newCon = Utility.CreateConduit(doc, PrimaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));////
+                                            newCon2 = Utility.CreateConduit(doc, SecondaryElements[i] as Conduit, new XYZ(pickpoint.X + givendist, pickpoint.Y, pickpoint.Z), pickpoint + new XYZ(direc.X + givendist, direc.Y, direc.Z));
                                         }
                                     }
                                 }
                             }
-                           
+
+
                             Parameter param = newCon.LookupParameter("Middle Elevation");
                             Parameter param2 = newCon2.LookupParameter("Middle Elevation");
 
@@ -1800,10 +1723,7 @@ namespace ChangesMonitor
                         Line ncl1 = newconcurve.Curve as Line;
                         XYZ direction = ncl1.Direction;
                         XYZ axisStart = null;
-                        // if (ParentUserControl.Instance.tagControl.SelectedIndex == 2)
                         axisStart = pickpoint;
-                        // else
-                        // axisStart = ConnectorOne.Origin;
                         XYZ axisSt = ConnectorOne.Origin;
                         XYZ axisEnd = axisStart.Add(XYZ.BasisZ.CrossProduct(direction));
                         Line axisLine = Line.CreateBound(axisStart, axisEnd);
@@ -1812,23 +1732,13 @@ namespace ChangesMonitor
                         Line ncl2 = newconcurve2.Curve as Line;
                         XYZ direction2 = ncl2.Direction;
                         XYZ axisStart2 = null;
-                        // if (ParentUserControl.Instance.tagControl.SelectedIndex == 2)
                         axisStart2 = pickpoint;
-                        // else
-                        // axisStart2 = ConnectorTwo.Origin;
                         XYZ axisEnd2 = axisStart2.Add(XYZ.BasisZ.CrossProduct(direction2));
                         Line axisLine2 = Line.CreateBound(axisStart2, axisEnd2);
                         Line pickedline = null;
 
-                        if (true)
-                        {
-                            pickedline = Line.CreateBound(pickpoint, pickpoint + new XYZ(direction.X + 10, direction.Y, direction.Z));
-                            Curve cu = pickedline as Curve;
-                            // Create the DetailCurve element
-                            // DetailCurve detailCurve = doc.Create.NewDetailCurve(doc.ActiveView, cu);
-                        }
-
-
+                        pickedline = Line.CreateBound(pickpoint, pickpoint + new XYZ(direction.X + 10, direction.Y, direction.Z));
+                        Curve cu = pickedline as Curve;
 
                         double PrimaryOffset = RevitVersion < 2020 ? PrimaryElements[0].LookupParameter("Offset").AsDouble() :
                                                  PrimaryElements[0].LookupParameter("Middle Elevation").AsDouble();
@@ -1843,71 +1753,55 @@ namespace ChangesMonitor
                             //rotate down
                             l_angle = -l_angle;
                         }
-
                         try
                         {
-                            /* if (ParentUserControl.Instance.tagControl.SelectedIndex == 0)
-                             {
-
-                                 ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), axisLine, -l_angle);
-                             }
-                             else if (ParentUserControl.Instance.tagControl.SelectedIndex == 1)
-                             {
-                                 ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), axisLine, l_angle);
-                             }*/
-                            if (true)
+                            if (IsHorizontal(nc))
                             {
-
-                                if (direct.X == 1)
+                                if (pickedline.Origin.Y < axisSt.Y)
                                 {
-                                    if (pickedline.Origin.Y < axisSt.Y)
-                                    {
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, l_angle);
-                                    }
-                                    else
-                                    {
-
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, l_angle);
-                                    }
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, l_angle);
                                 }
-                                else if (direct.Y == -1)
+                                else
                                 {
-                                    if (pickedline.Origin.X < axisSt.X)
-                                    {
-                                        //left in vertical
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
-                                    }
-                                    else
-                                    {
-                                        //right in vertical
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);/////////////////////
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
-                                    }
-                                }
-                                else //angle conduit
-                                {
-                                    if (pickedline.Origin.X < axisSt.X) //left
-                                    {
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
-                                    }
-                                    else //right
-                                    {
-                                        XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);
-                                        Line l1 = Line.CreateBound(axisStart, end);
-                                        ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
-                                    }
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, l_angle);
                                 }
                             }
-
+                            else if (IsVertical(nc))
+                            {
+                                if (pickedline.Origin.X < axisSt.X)
+                                {
+                                    //left in vertical
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
+                                }
+                                else
+                                {
+                                    //right in vertical
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);/////////////////////
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
+                                }
+                            }
+                            else //angle conduit
+                            {
+                                if (pickedline.Origin.X < axisSt.X) //left
+                                {
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z - 10);
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
+                                }
+                                else //right
+                                {
+                                    XYZ end = new XYZ(axisStart.X, axisStart.Y, axisStart.Z + 10);
+                                    Line l1 = Line.CreateBound(axisStart, end);
+                                    ElementTransformUtils.RotateElements(doc, thirdElements.Select(r => r.Id).ToList(), l1, -l_angle);
+                                }
+                            }
                             for (int i = 0; i < PrimaryElements.Count; i++)
                             {
                                 Element firstElement = PrimaryElements[i];
@@ -1916,9 +1810,10 @@ namespace ChangesMonitor
                                 Element forthElement = forthElements[i];
                                 Utility.AutoRetainParameters(PrimaryElements[i], SecondaryElements[i], uidoc, uiapp);
                                 Utility.AutoRetainParameters(PrimaryElements[i], thirdElement, doc, uiapp);
-                                if (true)
+
+                                if (IsVertical(refcurve))
                                 {
-                                    if (IsVertical(refcurve))
+                                    if (pickline.Origin.X < ax.X) //left
                                     {
                                         if (direct.Y == -1 && directDown.Y == 1)
                                             Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
@@ -1926,155 +1821,175 @@ namespace ChangesMonitor
                                             Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                         else if (direct.Y == -1 && directDown.Y == -1)
                                         {
-                                            if (pickline.Origin.X < ax.X) //left
-                                            {
-                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            }
-                                            else
-                                            {
-                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                               // Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                            }
+                                            //Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                         }
-                                        else if (direct.X == -1 && directDown.X == -1)
+                                        else if (direct.Y == 1 && directDown.Y == -1)
                                         {
-                                            if (pickedline.Origin.Y < axisSt.Y)
-                                            {
+                                            if (direct.X < 0 || directDown.X < 0)
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            }
-                                            else //up
-                                            {
+                                            else
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                            }
                                         }
                                         else
                                             Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-
                                     }
-                                    else if (Math.Round(direct.X) == Math.Round(directDown.X) && Math.Round(direct.Y) == Math.Round(directDown.Y) && direct.X != 1 && direct.Y != 1 && direct.X != -1 && direct.Y != -1)
+                                    else
                                     {
-                                        if (direct.X > 0 && directDown.X > 0)
+                                        if (direct.Y == -1 && directDown.Y == 1)
+                                            Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                        else if (direct.Y == 1 && directDown.Y == 1)
+                                            Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                        else if (direct.Y == -1 && directDown.Y == -1)
                                         {
-                                            if (pickedline.Origin.X < MPtAngle.X) //left
-                                            {
-                                                //Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            //Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                        }
+                                        else if (direct.Y == 1 && directDown.Y == -1)
+                                        {
+                                            if (direct.X < 0 || directDown.X < 0)
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            else
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            }
-                                            else //right
-                                            {
-                                                if (direct.Z == 0)
-                                                    Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                                else
-                                                  Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            }
                                         }
                                         else
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                    }
+
+                                }
+                                else if (Math.Round(direct.X) == Math.Round(directDown.X) && Math.Round(direct.Y) == Math.Round(directDown.Y) && direct.X != 1 && direct.Y != 1 && direct.X != -1 && direct.Y != -1)
+                                {
+                                    if (direct.X > 0 && directDown.X > 0)
+                                    {
+                                        if (pickedline.Origin.X < MPtAngle.X) //left
                                         {
-                                            if (pickedline.Origin.X < MPtAngle.X) //left
-                                            {
+                                            //Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                        }
+                                        else //right
+                                        {
+                                            if (direct.Z == 0)
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                            }
-                                            else //right
-                                            {
+                                            else
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            }
                                         }
                                     }
                                     else
                                     {
-                                        if (pickedline.Origin.Y > axisSt.Y)
+                                        if (pickedline.Origin.X < MPtAngle.X) //left
                                         {
-                                            if (direct.X == -1 && directDown.X == 1)
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                        }
+                                        else //right
+                                        {
+                                            Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                        }
+                                    }
+                                }
+                                else //horizontal
+                                {
+                                    if (pickedline.Origin.Y > axisSt.Y)
+                                    {
+                                        if (direct.X == -1 && directDown.X == 1)
+                                        {
+                                            if (direct.Y < 0 || directDown.Y < 0)
+                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            else
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                            else if (direct.X == 1 && directDown.X == 1)
-                                            {
-                                                if (Math.Round(direct.Y) == 0)
-                                                    Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                                else
-                                                    Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
-                                            }
+                                        }
+                                        else if (direct.X == 1 && directDown.X == 1)
+                                        {
+                                            if (Math.Round(direct.Y) == 0)
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                            else
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                        }
+                                        else if (direct.X == -1 && directDown.X == -1)
+                                        {
+                                            if (Math.Round(direct.Y, 2) == Math.Round(directDown.Y, 2))
+                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                         }
                                         else
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                    }
+                                    else
+                                    {
+                                        if (direct.X == -1 && directDown.X == 1)
                                         {
-                                            if (direct.X == -1 && directDown.X == 1)
-                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
-                                            else if (direct.X == 1 && directDown.X == 1)
+                                            if (direct.Y < 0 || directDown.Y < 0)
                                                 Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                             else
-                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
                                         }
+                                        else if (direct.X == 1 && directDown.X == 1)
+                                            Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                        else if (direct.X == -1 && directDown.X == -1)
+                                        {
+                                            if (Math.Round(direct.Y, 2) == Math.Round(directDown.Y, 2))
+                                                Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
+                                            else
+                                                Utility.CreateElbowFittings(secondElement, thirdElement, doc, uiapp);
+                                        }
+                                        else
+                                            Utility.CreateElbowFittings(PrimaryElements[i], thirdElement, doc, uiapp);
                                     }
                                 }
-                               
-
-
                             }
-                            /* if (ParentUserControl.Instance.tagControl.SelectedIndex == 0)
-                             {
 
-                                 ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), axisLine2, -l_angle);
-                             }
-                             else if (ParentUserControl.Instance.tagControl.SelectedIndex == 1)
-                             {
-                                 ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), axisLine2, l_angle);
-                             }*/
-                            if (true)//ParentUserControl.Instance.tagControl.SelectedIndex == 2)
+                            if (IsHorizontal(nc))
                             {
-
-                                if (direct.X == 1)
+                                if (pickedline.Origin.Y < axisSt.Y)
                                 {
-                                    if (pickedline.Origin.Y < axisSt.Y)
-                                    {
-                                        XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z + 10);
-                                        Line l2 = Line.CreateBound(axisStart2, end2);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, -l_angle);
-                                    }
-
-                                    else
-                                    {
-                                        XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
-                                        Line l1 = Line.CreateBound(axisStart2, end);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, -l_angle);
-                                    }
+                                    XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z + 10);
+                                    Line l2 = Line.CreateBound(axisStart2, end2);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, -l_angle);
                                 }
-                                else if (direct.Y == -1)
-                                {
-                                    if (pickedline.Origin.X < axisSt.X)
-                                    {
-                                        //left in vertical
-                                        XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
-                                        Line l2 = Line.CreateBound(axisStart2, end2);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, l_angle);
-                                    }
 
-                                    else
-                                    {
-                                        //right in vertical
-                                        XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z + 10);/////////////
-                                        Line l1 = Line.CreateBound(axisStart2, end);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, l_angle);
-                                    }
-                                }
                                 else
                                 {
-                                    if (pickedline.Origin.X < axisSt.X) //left
-                                    {
-                                        XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
-                                        Line l1 = Line.CreateBound(axisStart2, end);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, l_angle);
-                                    }
-                                    else //right
-                                    {
-
-                                        XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
-                                        Line l2 = Line.CreateBound(axisStart2, end2);
-                                        ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, -l_angle);
-                                    }
+                                    XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
+                                    Line l1 = Line.CreateBound(axisStart2, end);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, -l_angle);
+                                }
+                            }
+                            else if (IsVertical(nc))
+                            {
+                                if (pickedline.Origin.X < axisSt.X)
+                                {
+                                    //left in vertical
+                                    XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
+                                    Line l2 = Line.CreateBound(axisStart2, end2);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, l_angle);
                                 }
 
+                                else
+                                {
+                                    //right in vertical
+                                    XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z + 10);/////////////
+                                    Line l1 = Line.CreateBound(axisStart2, end);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, l_angle);
+                                }
                             }
+                            else
+                            {
+                                if (pickedline.Origin.X < axisSt.X) //left
+                                {
+                                    XYZ end = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
+                                    Line l1 = Line.CreateBound(axisStart2, end);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l1, l_angle);
+                                }
+                                else //right
+                                {
+
+                                    XYZ end2 = new XYZ(axisStart2.X, axisStart2.Y, axisStart2.Z - 10);
+                                    Line l2 = Line.CreateBound(axisStart2, end2);
+                                    ElementTransformUtils.RotateElements(doc, forthElements.Select(r => r.Id).ToList(), l2, -l_angle);
+                                }
+                            }
+
+
 
                             for (int i = 0; i < SecondaryElements.Count; i++)
                             {
@@ -2084,9 +1999,10 @@ namespace ChangesMonitor
                                 Element forthElement = forthElements[i];
                                 Utility.AutoRetainParameters(PrimaryElements[i], SecondaryElements[i], uidoc, uiapp);
                                 Utility.AutoRetainParameters(PrimaryElements[i], thirdElement, doc, uiapp);
-                                if (true)
+
+                                if (IsVertical(refcurve))
                                 {
-                                    if (IsVertical(refcurve))
+                                    if (pickline.Origin.X < ax.X) //left
                                     {
                                         if (direct.Y == -1 && directDown.Y == 1)
                                             Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
@@ -2094,89 +2010,124 @@ namespace ChangesMonitor
                                             Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                         else if (direct.Y == -1 && directDown.Y == -1)
                                         {
-                                            if (pickline.Origin.X < ax.X) //left
-                                            {
-                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            }
-                                            else
-                                            {
-                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-
-                                            }
+                                            //Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                         }
-                                        else if (direct.X == -1 && directDown.X == -1)
+                                        else if (direct.Y == 1 && directDown.Y == -1)
                                         {
-                                            if (pickedline.Origin.Y < axisSt.Y)
-                                            {
+                                            if (direct.X < 0 || directDown.X < 0)
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            }
                                             else
-                                            {
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-                                            }
                                         }
                                         else
                                             Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-
                                     }
-                                    else if (Math.Round(direct.X) == Math.Round(directDown.X) && Math.Round(direct.Y) == Math.Round(directDown.Y) && direct.X != 1 && direct.Y != 1 && direct.X != -1 && direct.Y != -1)
+                                    else
                                     {
-                                        if (direct.X > 0 && directDown.X > 0)
+                                        if (direct.Y == -1 && directDown.Y == 1)
+                                            Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                        else if (direct.Y == 1 && directDown.Y == 1)
+                                            Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                        else if (direct.Y == -1 && directDown.Y == -1)
                                         {
-                                            if (pickedline.Origin.X < MPtAngle.X) //left
-                                            {
-                                                //Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            //Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                        }
+                                        else if (direct.Y == 1 && directDown.Y == -1)
+                                        {
+                                            if (direct.X < 0 || directDown.X < 0)
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            else
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            }
-                                            else //right
-                                            {
-                                                if (direct.Z == 0)
-                                                    Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-                                                else
-                                                   Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            }
                                         }
                                         else
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                    }
+
+                                }
+                                else if (Math.Round(direct.X) == Math.Round(directDown.X) && Math.Round(direct.Y) == Math.Round(directDown.Y) && direct.X != 1 && direct.Y != 1 && direct.X != -1 && direct.Y != -1)
+                                {
+                                    if (direct.X > 0 && directDown.X > 0)
+                                    {
+                                        if (pickedline.Origin.X < MPtAngle.X) //left
                                         {
-                                            if (pickedline.Origin.X < MPtAngle.X) //left
-                                            {
+                                            //Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                        }
+                                        else //right
+                                        {
+                                            if (direct.Z == 0)
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-                                            }
-                                            else //right
-                                            {
+                                            else
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            }
                                         }
                                     }
                                     else
                                     {
-                                        if (pickedline.Origin.Y > axisSt.Y)
+                                        if (pickedline.Origin.X < MPtAngle.X) //left
                                         {
-                                            if (direct.X == -1 && directDown.X == 1)
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                        }
+                                        else //right
+                                        {
+                                            Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (pickedline.Origin.Y > axisSt.Y)
+                                    {
+                                        if (direct.X == -1 && directDown.X == 1)
+                                        {
+                                            if (direct.Y < 0 || directDown.Y < 0)
+                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            else
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-                                            else if (direct.X == 1 && directDown.X == 1)
-                                            {
-                                                if (Math.Round(direct.Y) == 0)
-                                                    Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                                else
-                                                    Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
-                                            }
+                                        }
+                                        else if (direct.X == 1 && directDown.X == 1)
+                                        {
+                                            if (Math.Round(direct.Y) == 0)
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                            else
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                        }
+                                        else if (direct.X == -1 && directDown.X == -1)
+                                        {
+                                            if (Math.Round(direct.Y, 2) == Math.Round(directDown.Y, 2))
+                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                             else
                                                 Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                         }
                                         else
-                                        {
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                    }
+                                    else
+                                    {
 
-                                            if (direct.X == -1 && directDown.X == 1)
-                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
-                                            else if (direct.X == 1 && directDown.X == 1)
+                                        if (direct.X == -1 && directDown.X == 1)
+                                        {
+                                            if (direct.Y < 0 || directDown.Y < 0)
                                                 Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                             else
-                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
                                         }
+                                        else if (direct.X == 1 && directDown.X == 1)
+                                            Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                        else if (direct.X == -1 && directDown.X == -1)
+                                        {
+                                            if (Math.Round(direct.Y, 2) == Math.Round(directDown.Y, 2))
+                                                Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
+                                            else
+                                                Utility.CreateElbowFittings(firstElement, forthElement, doc, uiapp);
+                                        }
+                                        else
+                                            Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                     }
                                 }
-                              
+
+
 
                             }
                             for (int i = 0; i < thirdElements.Count; i++)
@@ -2283,7 +2234,6 @@ namespace ChangesMonitor
 
                                                                 string message = string.Format("Make sure conduits are having less overlap, if not please reduce the overlapping distance.");
                                                                 System.Windows.MessageBox.Show("Warning. \n" + message, "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
-                                                                //_ = Utility.UserActivityLog(System.Reflection.Assembly.GetExecutingAssembly(), uiapp, Util.ApplicationWindowTitle, startDate, "Failed", "Vertical Offset", Util.ProductVersion, "Connect");
                                                                 return;
                                                             }
 

@@ -37,7 +37,7 @@ namespace SaddleConnect
             {
                 _isCancel = false;
                 _isStoped = false;
-                window.Close();
+                //window.Close();
             }
 
         }

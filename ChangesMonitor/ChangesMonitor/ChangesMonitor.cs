@@ -189,80 +189,10 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 ToggleConPakToolsButton.LargeImage = OnLargeImage;
                 ToggleConPakToolsButton.Image = OnImage;
 
-                Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
-                foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
-                {
-                    if (tab.Title.Equals("Sanveo Beta"))
-                    {
-                        foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
-                        {
-
-                            if (panel.Source.AutomationName == "AutoUpdater")
-                            {
-                                RibbonItemCollection collctn = panel.Source.Items;
-
-
-                                foreach (Autodesk.Windows.RibbonItem ri in collctn)
-                                {
-                                    if (ri is RibbonRowPanel)
-                                    {
-                                        foreach (var item in (ri as RibbonRowPanel).Items)
-                                        {
-                                            if (item is Autodesk.Windows.RibbonButton)
-                                            {
-
-                                                ri.IsVisible = false;
-                                                ri.ShowText = false;
-                                                ri.ShowImage = false;
-
-                                            }
-                                        }
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-
             }
             else
             {
-                Autodesk.Windows.RibbonControl ribbon = Autodesk.Windows.ComponentManager.Ribbon;
-                foreach (Autodesk.Windows.RibbonTab tab in ribbon.Tabs)
-                {
-                    if (tab.Title.Equals("Sanveo Beta"))
-                    {
-                        foreach (Autodesk.Windows.RibbonPanel panel in tab.Panels)
-                        {
-
-                            if (panel.Source.AutomationName == "AutoUpdater")
-                            {
-                                RibbonItemCollection collctn = panel.Source.Items;
-                                foreach (Autodesk.Windows.RibbonItem ri in collctn)
-                                {
-
-                                    if (ri is RibbonRowPanel)
-                                    {
-                                        foreach (var item in (ri as RibbonRowPanel).Items)
-                                        {
-                                            if (item is Autodesk.Windows.RibbonButton)
-                                            {
-
-                                                ri.IsVisible = true;
-                                                ri.ShowText = true;
-                                                ri.ShowImage = true;
-
-                                            }
-                                        }
-                                    }
-
-
-                                }
-                            }
-                        }
-                    }
-                }
+               
                 ToggleConPakToolsButton.LargeImage = OffLargeImage;
                 ToggleConPakToolsButton.Image = OffImage;
             }

@@ -82,7 +82,7 @@
         <!--HEADER-->
         <DockPanel x:Name="TitleBar"
                    DockPanel.Dock="Top">
-            <customUC:HeaderPanelControl Tittle="Three Point Saddle" x:Name="HeaderPanel"
+            <customUC:HeaderPanelControl Tittle="Saddle Connect" x:Name="HeaderPanel"
                                        
                                              DocumentPath="Vconnect.html"></customUC:HeaderPanelControl>
         </DockPanel>

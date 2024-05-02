@@ -72,8 +72,7 @@ namespace SaddleConnect
                         Console.WriteLine(ex.Message);
                     }
                 }
-                _externalEvents[0].Raise();
-
+               
 
             }
             catch (Exception exception)
@@ -110,7 +109,7 @@ namespace SaddleConnect
             customTabsList.Add(b);
             b = new CustomTab();
             b.Id = 3;
-            b.Icon = PackIconKind.ArrowExpand;
+            b.Icon = PackIconKind.AccessPoint;
             customTabsList.Add(b);
             tagControl.ItemsSource = customTabsList;
             tagControl.SelectedIndex = 0;
@@ -172,6 +171,12 @@ namespace SaddleConnect
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             txtheight.Click_load(txtheight);
+        }
+
+        private void CreateBtn_BtnClick(object sender)
+        {
+            _externalEvents[0].Raise();
+
         }
     }
 }

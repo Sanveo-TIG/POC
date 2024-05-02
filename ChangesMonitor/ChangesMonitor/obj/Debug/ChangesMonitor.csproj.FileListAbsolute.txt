@@ -502,11 +502,6 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Autodesk.UI.Themes.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\CompositionServices.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Memory.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Newtonsoft.Json.Bson.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Buffers.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Numerics.Vectors.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignColors.pdb
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignThemes.Wpf.xml
@@ -521,12 +516,6 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\TIGUtility.dll.config
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\RevitAddInUtility.xml
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Memory.xml
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Newtonsoft.Json.Bson.pdb
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Newtonsoft.Json.Bson.xml
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Buffers.xml
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Numerics.Vectors.xml
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\ChangesMonitor.csproj.AssemblyReference.cache
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\ChangesMonitor.g.resources
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\Revit.SDK.Samples.ChangesMonitor.CS.ChangesInformationForm.resources

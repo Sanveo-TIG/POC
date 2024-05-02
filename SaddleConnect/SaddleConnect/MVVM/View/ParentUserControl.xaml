@@ -42,6 +42,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3">
             <TIG:TextBoxControl x:Name="txtheight" UnitsLabel="Feet and inches"   IsUnit="True"></TIG:TextBoxControl>
+            <TIG:ButtonControl x:Name="CreateBtn" Label="Create" BtnClick="CreateBtn_BtnClick"></TIG:ButtonControl>
         </StackPanel>
 
 
