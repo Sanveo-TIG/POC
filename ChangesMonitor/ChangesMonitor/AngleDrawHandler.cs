@@ -2126,9 +2126,6 @@ namespace ChangesMonitor
                                             Utility.CreateElbowFittings(SecondaryElements[i], forthElement, doc, uiapp);
                                     }
                                 }
-
-
-
                             }
                             for (int i = 0; i < thirdElements.Count; i++)
                             {

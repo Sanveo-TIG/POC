@@ -155,10 +155,10 @@
     <Content Include="ChangesMonitor.addin">
       <SubType>Designer</SubType>
     </Content>
+    <Resource Include="Resources\off 32x32.png" />
+    <Resource Include="Resources\on 32x32.png" />
     <Resource Include="Resources\switch-off 16x16.png" />
-    <Resource Include="Resources\switch-off 32x32.png" />
     <Resource Include="Resources\switch-on 16x16.png" />
-    <Resource Include="Resources\switch-on 32x32.png" />
     <Resource Include="Resources\connection 16x16.png" />
     <Resource Include="Resources\connection 32x32.png" />
     <Resource Include="Resources\connection.png" />

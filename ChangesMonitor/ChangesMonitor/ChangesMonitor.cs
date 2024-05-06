@@ -173,15 +173,15 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             string s = ToggleConPakToolsButton.ItemText;
 
 
-            BitmapImage OffLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-off 32x32.png"));
+            BitmapImage OffLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/off 32x32.png"));
 
             BitmapImage OnImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-on 16x16.png"));
 
-            BitmapImage OnLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-on 32x32.png"));
+            BitmapImage OnLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/on 32x32.png"));
 
             BitmapImage OffImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-off 16x16.png"));
 
-            if (s == "OFF")
+            if (s == "AutoUpdate OFF")
             {
                 ProjectParameterHandler projectParameterHandler = new ProjectParameterHandler();
                 ExternalEvent Event = ExternalEvent.Create(projectParameterHandler);
@@ -198,7 +198,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             }
 
 
-            ToggleConPakToolsButton.ItemText = s.Equals("OFF") ? "ON" : "OFF";
+            ToggleConPakToolsButton.ItemText = s.Equals("AutoUpdate OFF") ? "AutoUpdate ON" : "AutoUpdate OFF";
 
 
         }
@@ -207,8 +207,8 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string dllLocation = Path.Combine(executableLocation, "ChangesMonitor.dll");
 
-            PushButtonData buttondata = new PushButtonData("ModifierBtn", "OFF", dllLocation, "Revit.SDK.Samples.ChangesMonitor.CS.Command");
-            BitmapImage pb1Image = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-off 32x32.png"));
+            PushButtonData buttondata = new PushButtonData("ModifierBtn", "AutoUpdate OFF", dllLocation, "Revit.SDK.Samples.ChangesMonitor.CS.Command");
+            BitmapImage pb1Image = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/off 32x32.png"));
             buttondata.LargeImage = pb1Image;
 
             BitmapImage pb1Image2 = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-off 16x16.png"));
@@ -223,8 +223,8 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
         public Autodesk.Revit.UI.RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "Sanveo Beta"; // Archcorp
-            string ribbonPanelText = "AutoUpdater"; // Architecture
+            string tab = "Sanveo Tools"; // Archcorp
+            string ribbonPanelText = "ConPak Tools-Beta"; // Architecture
 
             // Empty ribbon panel 
             Autodesk.Revit.UI.RibbonPanel ribbonPanel = null;
@@ -254,7 +254,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         }
         void CtrlApp_DocumentChanged(object sender, Autodesk.Revit.DB.Events.DocumentChangedEventArgs e)
         {
-            if (ToggleConPakToolsButton.ItemText == "ON")
+            if (ToggleConPakToolsButton.ItemText == "AutoUpdate ON")
             {
 
                 // get the current document.
