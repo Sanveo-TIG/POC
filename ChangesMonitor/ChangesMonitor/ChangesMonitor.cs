@@ -270,7 +270,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                         Element elem = doc.GetElement(id);
                         if (elem.Category != null && elem.Category.Name == "Conduits")
                         {
-                            Parameter parameter = elem.LookupParameter("Bend Angle");
+                            Parameter parameter = elem.LookupParameter("AutoUpdater BendAngle");
                             value = parameter.AsString();
                             elementlist.Add(elem);
                         }

@@ -34,14 +34,12 @@ namespace ChangesMonitor
                 UiApp.Application.SharedParametersFilename = tempfileName;
                 DefinitionFile defFile = UiApp.Application.OpenSharedParameterFile();
 
-                CategorySet catSet = UiApp.Application.Create.NewCategorySet();
+
                 CategorySet catSet_FORCUID = UiApp.Application.Create.NewCategorySet();
-                CategorySet catSet_2 = UiApp.Application.Create.NewCategorySet();
-                CategorySet catSet_3 = UiApp.Application.Create.NewCategorySet();
+
 
                 Categories categories = doc.Settings.Categories;
-                Categories categories_2 = doc.Settings.Categories;
-                Categories categories_3 = doc.Settings.Categories;
+
 
                 Category conduit
                  = categories.get_Item(
@@ -53,11 +51,11 @@ namespace ChangesMonitor
                     {
                         foreach (Definition def in dG.Definitions)
                         {
-                            if (def.Name == "Bend Angle")
+                            if (def.Name == "AutoUpdater BendAngle")
                             {
                                 Autodesk.Revit.DB.Binding binding = UiApp.Application.Create.NewInstanceBinding(catSet_FORCUID);
                                 BindingMap map = (new UIApplication(UiApp.Application)).ActiveUIDocument.Document.ParameterBindings;
-                                map.Insert(def, binding, def.Name == "Bend Angle" ? BuiltInParameterGroup.PG_CONSTRAINTS : def.ParameterGroup);
+                                map.Insert(def, binding, def.Name == "AutoUpdater BendAngle" ? BuiltInParameterGroup.PG_CONSTRAINTS : def.ParameterGroup);
                             }
                         }
                     }
