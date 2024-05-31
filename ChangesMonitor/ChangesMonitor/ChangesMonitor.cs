@@ -256,7 +256,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         {
             if (ToggleConPakToolsButton.ItemText == "AutoUpdate ON")
             {
-
                 // get the current document.
                 Document doc = e.GetDocument();
                 ICollection<ElementId> modifiedElem = e.GetModifiedElementIds();
@@ -604,7 +603,9 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             }
             ExternalApplication.InfoForm.Show();*/
             ExternalApplication.Toggle();
-
+            ProjectParameterHandler projectParameterHandler = new ProjectParameterHandler();
+            ExternalEvent Event = ExternalEvent.Create(projectParameterHandler);
+            Event.Raise();
             UIDocument uIDocument = commandData.Application.ActiveUIDocument;
             Document doc = uIDocument.Document;
             if (doc.IsReadOnly)

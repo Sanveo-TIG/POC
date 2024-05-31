@@ -446,10 +446,8 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\System.Net.Http.Formatting.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\TIGUtility.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\AdpSDKCSharpWrapper.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\AdskRcManaged.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\RevitAPIFoundation.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\RevitDBAPI.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\RevitDBCoreAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\PersistenceDBAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\UtilityAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\APIDBAPI.dll
@@ -481,9 +479,6 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\AnalysisAppsDBAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDBAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\IntfATFAPI.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\TextEngineAPI.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\InfrastructureDBAPI.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\ATFRevitCoreAPI.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\DBManagedServices.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\RevitAddInUtility.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\APIInterop.dll
@@ -501,7 +496,6 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Autodesk.UI.Windows.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Autodesk.UI.Themes.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\Xceed.Wpf.AvalonDock.dll
-C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\CompositionServices.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignColors.pdb
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\MaterialDesignThemes.Wpf.xml
@@ -524,3 +518,4 @@ C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\ChangesMonitor.csproj.CopyComplete
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\ChangesMonitor.dll
 C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\obj\Debug\ChangesMonitor.pdb
+C:\Ridhan Backup\Sorce code\Latest SANVEO\POC\ChangesMonitor\ChangesMonitor\bin\Debug\EnergyAnalysisUtilitiesAPI.dll

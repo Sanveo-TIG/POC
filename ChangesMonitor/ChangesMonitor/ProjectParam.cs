@@ -2,6 +2,8 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Electrical;
 using Autodesk.Revit.UI;
+using Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json;
 using Revit.SDK.Samples.ChangesMonitor.CS;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,9 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using TIGUtility;
 
 namespace ChangesMonitor
@@ -45,17 +49,39 @@ namespace ChangesMonitor
                  = categories.get_Item(
                    BuiltInCategory.OST_Conduit);
                 catSet_FORCUID.Insert(conduit);
+                List<string> listGUID = new List<string>();
+                ParameterSet pS = doc.ProjectInformation.Parameters as ParameterSet;
+                if (pS != null)
+                {
+                    foreach (Autodesk.Revit.DB.Parameter p in pS)
+                    {
+                        if (p.IsShared)
+                        {
+                            string str = p.GUID.ToString();
+                            listGUID.Add(str);
+                        }
+                    }
+                }
+
                 if (defFile != null)
                 {
                     foreach (DefinitionGroup dG in defFile.Groups)
                     {
                         foreach (Definition def in dG.Definitions)
                         {
+                            string s = def.ToString();
                             if (def.Name == "AutoUpdater BendAngle")
                             {
-                                Autodesk.Revit.DB.Binding binding = UiApp.Application.Create.NewInstanceBinding(catSet_FORCUID);
-                                BindingMap map = (new UIApplication(UiApp.Application)).ActiveUIDocument.Document.ParameterBindings;
-                                map.Insert(def, binding, def.Name == "AutoUpdater BendAngle" ? BuiltInParameterGroup.PG_CONSTRAINTS : def.ParameterGroup);
+                                ExternalDefinition definition = dG.Definitions.get_Item(def.Name) as ExternalDefinition;
+                                if (!listGUID.Any(x => x == definition.GUID.ToString()))
+                                {
+                                    Autodesk.Revit.DB.Binding binding = UiApp.Application.Create.NewInstanceBinding(catSet_FORCUID);
+                                    BindingMap map = (new UIApplication(UiApp.Application)).ActiveUIDocument.Document.ParameterBindings;
+                                    map.Insert(def, binding, def.Name == "AutoUpdater BendAngle" ? BuiltInParameterGroup.PG_CONSTRAINTS : def.ParameterGroup);
+                                }
+                                else
+                                {
+                                }
                             }
                         }
                     }
@@ -74,4 +100,5 @@ namespace ChangesMonitor
             return "Revit Addin";
         }
     }
+
 }
