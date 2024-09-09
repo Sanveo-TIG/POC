@@ -33,7 +33,6 @@ namespace ChangesMonitor
         bool _isfirst;
         public void Execute(UIApplication uiApp)
         {
-
             UIDocument _uiDoc = uiApp.ActiveUIDocument;
             Document _doc = _uiDoc.Document;
             try
@@ -43,9 +42,10 @@ namespace ChangesMonitor
                 List<Element> SelectedElements = new List<Element>();
                 using Transaction transaction = new Transaction(_doc);
                 transaction.Start("Delete Element");
-                if (ChangesInformationForm.instance != null && ChangesInformationForm.instance._Value != null && ChangesInformationForm.instance._Value.Count() != 0)
+
+                if (MainWindow.Instance != null && MainWindow.Instance.angleDegree != null && MainWindow.Instance.angleDegree != 0)
                 {
-                    foreach (ElementId element in ChangesInformationForm.instance._selectedElements)
+                    foreach (ElementId element in ChangesInformationForm.instance._selectedElements.Distinct())
                     {
                         SelectedElements.Add(_doc.GetElement(element));
                     }
@@ -64,7 +64,7 @@ namespace ChangesMonitor
                 ChangesInformationForm.instance._deletedIds.Clear();
                 ChangesInformationForm.instance._selectedElements.Clear();
                 SelectedElements.Clear();
-                ChangesInformationForm.instance._Value = null;
+                MainWindow.Instance.angleDegree = null;
                 ChangesInformationForm.instance._refConduitKick.Clear();
                 ChangesInformationForm.instance.MidSaddlePt = null;
             }
@@ -81,7 +81,6 @@ namespace ChangesMonitor
             Document doc = uidoc.Document;
             int.TryParse(_uiapp.Application.VersionNumber, out int RevitVersion);
             string offsetVariable = RevitVersion < 2020 ? "Offset" : "Middle Elevation";
-
 
             try
             {
@@ -106,9 +105,7 @@ namespace ChangesMonitor
                         tx.Start();
 
                         var CongridDictionary1 = Utility.GroupByElements(SelectedElements);
-
                         Dictionary<double, List<Element>> group = new Dictionary<double, List<Element>>();
-
 
                         if (CongridDictionary1.Count == 2)
                         {
@@ -258,7 +255,7 @@ namespace ChangesMonitor
                                             }
                                             else
                                             {
-                                                //Hoffset
+                                                //Hoffset //if
                                                 HoffsetExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements);
                                             }
                                         }
@@ -385,10 +382,10 @@ namespace ChangesMonitor
                                     groupPrimary.Add(group.ElementAt(i).Key, group.ElementAt(i).Value);
                                 }
 
-
                             }
 
-                            if (groupPrimary.Count == groupSecondary.Count)
+                            /////////
+                            if (groupPrimary.Count == groupSecondary.Count)   
                             {
 
                                 for (int i = 0; i < groupPrimary.Count; i++)
@@ -538,7 +535,7 @@ namespace ChangesMonitor
                                             }
                                             else
                                             {
-                                                //Hoffset
+                                                //Hoffset //else if
                                                 HoffsetExecute(_uiapp, ref primarySortedElements, ref secondarySortedElements);
                                             }
                                         }
@@ -664,11 +661,9 @@ namespace ChangesMonitor
             }
             finally
             {
-
             }
-
-
         }
+
         #region connectors
         public void HoffsetExecute(UIApplication uiapp, ref List<Element> PrimaryElements, ref List<Element> SecondaryElements)
         {
@@ -679,7 +674,7 @@ namespace ChangesMonitor
             string offsetVariable = RevitVersion < 2020 ? "Offset" : "Middle Elevation";
             DateTime startDate = DateTime.UtcNow;
             ElementsFilter filter = new ElementsFilter("Conduits");
-            double angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
+            double angle = Convert.ToDouble(MainWindow.Instance.angleDegree) * (Math.PI / 180);
             try
             {
                 List<Element> thirdElements = new List<Element>();
@@ -933,7 +928,7 @@ namespace ChangesMonitor
                         Connector ConnectorOne = null;
                         Connector ConnectorTwo = null;
                         tx.Start();
-                        double l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
+                        double l_angle = Convert.ToDouble(MainWindow.Instance.angleDegree) * (Math.PI / 180);
                         for (int i = 0; i < PrimaryElements.Count; i++)
                         {
                             List<XYZ> ConnectorPoints = new List<XYZ>();
@@ -1144,7 +1139,7 @@ namespace ChangesMonitor
             string offsetVariable = RevitVersion < 2020 ? "Offset" : "Middle Elevation";
             double elevationOne = PrimaryElements[0].LookupParameter(offsetVariable).AsDouble();
             double elevationTwo = SecondaryElements[0].LookupParameter(offsetVariable).AsDouble();
-            l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value);
+            l_angle = Convert.ToDouble(MainWindow.Instance.angleDegree);
             bool isRollUp = elevationOne < elevationTwo;
             List<ElementId> Unwantedids;
             if (isRollUp)
@@ -1204,7 +1199,7 @@ namespace ChangesMonitor
                     SecondaryElements.FirstOrDefault().LookupParameter(offsetVariable).AsDouble();
                 if (!isUp)
                 {
-                    l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
+                    l_angle = Convert.ToDouble(MainWindow.Instance.angleDegree) * (Math.PI / 180);
                     try
                     {
                         using (SubTransaction tx = new SubTransaction(doc))
@@ -1301,7 +1296,7 @@ namespace ChangesMonitor
                 }
                 if (isUp)
                 {
-                    l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
+                    l_angle = Convert.ToDouble(MainWindow.Instance.angleDegree) * (Math.PI / 180);
                     try
                     {
 
@@ -1503,7 +1498,7 @@ namespace ChangesMonitor
                         Connector ConnectorTwo = null;
 
                         tx.Start();
-                        double l_angle = Convert.ToDouble(ChangesInformationForm.instance._Value) * (Math.PI / 180);
+                        double l_angle = Convert.ToDouble(MainWindow.Instance.angleDegree) * (Math.PI / 180);
                         double givendist = 0;
                         for (int i = 0; i < PrimaryElements.Count; i++)
                         {

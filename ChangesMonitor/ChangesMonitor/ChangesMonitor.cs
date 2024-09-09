@@ -1,3 +1,4 @@
+
 //
 // (C) Copyright 2003-2019 by Autodesk, Inc.
 //
@@ -27,7 +28,6 @@ using System.Text;
 using System.Reflection;
 using System.Diagnostics;
 using System.Collections.Generic;
-
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.ApplicationServices;
@@ -44,10 +44,10 @@ using System.Security.Cryptography;
 using System.Windows.Media.Imaging;
 using Autodesk.Windows;
 using System.Runtime.Remoting.Contexts;
+using Autodesk.Revit.UI.Selection;
 
 namespace Revit.SDK.Samples.ChangesMonitor.CS
 {
-
     /// <summary>
     /// A class inherits IExternalApplication interface and provide an entry of the sample.
     /// It create a modeless dialog to track the changes.
@@ -58,7 +58,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
 
     public class ExternalApplication : IExternalApplication
     {
-
+        public static System.Windows.Window window;
         List<Element> collection = null;
 
         #region  Class Member Variables
@@ -80,7 +80,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// </summary>
         private static ChangesInformationForm m_InfoForm;
         #endregion
-
         #region Class Static Property
         /// <summary>
         /// Property to get and set private member variables of changes log information.
@@ -101,7 +100,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             set { ExternalApplication.m_InfoForm = value; }
         }
         #endregion
-
         #region IExternalApplication Members
         /// <summary>
         /// Implement this method to implement the external application which should be called when 
@@ -117,26 +115,15 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// failed to load and the release the internal reference.</returns>
         public Result OnStartup(UIControlledApplication application)
         {
-            /* UIDocument _uidoc = null;
-             Document _doc = null;*/
-            // initialize member variables.
             OnButtonCreate(application);
 
+            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(DocumentFormatAssemblyLoad);
+
             m_CtrlApp = application.ControlledApplication;
+            application.Idling += OnIdling; //
             m_ChangesInfoTable = CreateChangeInfoTable();
             m_InfoForm = new ChangesInformationForm(ChangesInfoTable);
-            // register the DocumentChanged event
-            // m_CtrlApp.DocumentOpened += new EventHandler<Autodesk.Revit.DB.Events.DocumentOpenedEventArgs>(application_DocumentOpened);
-            m_CtrlApp.DocumentChanged += new EventHandler<Autodesk.Revit.DB.Events.DocumentChangedEventArgs>(CtrlApp_DocumentChanged);
-
-            // show dialog
-
-            //m_InfoForm.Width = 300;
-            // m_InfoForm.Show();
             m_InfoForm.Hide();
-            // TaskDialog.Show("ChangesInfoTable", m_ChangesInfoTable.ToString());
-            // Debug.Print(m_ChangesInfoTable.ToString());
-
             return Result.Succeeded;
         }
 
@@ -152,13 +139,14 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// some point.
         /// If false is returned then the Revit user should be warned of the failure of the external 
         /// application to shut down correctly.</returns>
+      
         public Result OnShutdown(UIControlledApplication application)
         {
-            m_CtrlApp.DocumentChanged += CtrlApp_DocumentChanged;
             m_InfoForm = null;
             m_ChangesInfoTable = null;
             return Result.Succeeded;
         }
+        
         #endregion
 
         #region Event handler
@@ -168,19 +156,14 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// 
+
         public static void Toggle()
         {
             string s = ToggleConPakToolsButton.ItemText;
-
-
             BitmapImage OffLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/off 32x32.png"));
-
             BitmapImage OnImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-on 16x16.png"));
-
             BitmapImage OnLargeImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/on 32x32.png"));
-
             BitmapImage OffImage = new BitmapImage(new Uri("pack://application:,,,/ChangesMonitor;component/Resources/switch-off 16x16.png"));
-
             if (s == "AutoUpdate OFF")
             {
                 ProjectParameterHandler projectParameterHandler = new ProjectParameterHandler();
@@ -188,20 +171,15 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                 Event.Raise();
                 ToggleConPakToolsButton.LargeImage = OnLargeImage;
                 ToggleConPakToolsButton.Image = OnImage;
-
             }
             else
             {
-               
                 ToggleConPakToolsButton.LargeImage = OffLargeImage;
                 ToggleConPakToolsButton.Image = OffImage;
             }
-
-
             ToggleConPakToolsButton.ItemText = s.Equals("AutoUpdate OFF") ? "AutoUpdate ON" : "AutoUpdate OFF";
-
-
         }
+     
         private void OnButtonCreate(UIControlledApplication application)
         {
             string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -217,14 +195,25 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             var ribbonPanel = RibbonPanel(application);
             if (ribbonPanel != null)
                 ToggleConPakToolsButton = ribbonPanel.AddItem(buttondata) as PushButton;
-
-
         }
-
+        public static Assembly DocumentFormatAssemblyLoad(object sender, ResolveEventArgs args)
+        {
+            if (args.Name.Contains("resources"))
+            {
+                return null;
+            }
+            if (args.Name.Contains("TIGUtility"))
+            {
+                string assemblyPath = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\TIGUtility.dll";
+                var assembly = Assembly.Load(assemblyPath);
+                return assembly;
+            }
+            return null;
+        }
         public Autodesk.Revit.UI.RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "Sanveo Tools"; // Archcorp
-            string ribbonPanelText = "ConPak Tools-Beta"; // Architecture
+            string tab = "SNVAddins-Beta"; // Archcorp
+            string ribbonPanelText = "Auto Updater Tools"; // Architecture
 
             // Empty ribbon panel 
             Autodesk.Revit.UI.RibbonPanel ribbonPanel = null;
@@ -252,28 +241,69 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             //return panel 
             return ribbonPanel;
         }
-        void CtrlApp_DocumentChanged(object sender, Autodesk.Revit.DB.Events.DocumentChangedEventArgs e)
+        private void OnIdling(object sender, Autodesk.Revit.UI.Events.IdlingEventArgs e)
         {
             if (ToggleConPakToolsButton.ItemText == "AutoUpdate ON")
             {
-                // get the current document.
-                Document doc = e.GetDocument();
-                ICollection<ElementId> modifiedElem = e.GetModifiedElementIds();
+                List<Element> SelectedElements = new List<Element>();
+                UIApplication uiApp = sender as UIApplication;
+                UIDocument uiDoc = uiApp.ActiveUIDocument;
+                Document doc = uiDoc.Document;
+                if (doc != null && !doc.IsReadOnly)
+                {
+                    //Select conduit
+                    Selection selection = uiDoc.Selection;
+                    List<ElementId> selectedIds = selection.GetElementIds().ToList();
+                    foreach (ElementId elementID in selectedIds)
+                    {
+                        if (doc.GetElement(elementID).Category != null)
+                        {
+                            if (doc.GetElement(elementID).Category.Name == "Conduits")
+                            {
+                                SelectedElements.Add(doc.GetElement(elementID));
+                                ChangesInformationForm.instance._selectedElements.Add(elementID);
+                            }
+                        }
+                    }
+                    if (selectedIds.Any())
+                    {
+                        if (doc.GetElement(selectedIds.FirstOrDefault()).Category != null)
+                        {
+                            if (doc.GetElement(selectedIds.FirstOrDefault()).Category.Name == "Conduits")
+                            {
+                                if (window == null)
+                                {
+                                    if (SelectedElements != null && SelectedElements.Count > 0)
+                                    { 
+                                        window = new MainWindow();
+                                        MainWindow.Instance.firstElement = new List<Element>();
+                                        MainWindow.Instance.firstElement.AddRange(SelectedElements);
+                                        MainWindow.Instance._document = doc;
+                                        MainWindow.Instance._uiDocument = uiDoc;
+                                        MainWindow.Instance._uiApplication = uiApp;
+                                        window.Show();
+                                    }
+                                    else
+                                    { 
+                                        uiDoc.Selection.SetElementIds(new List<ElementId> { ElementId.InvalidElementId });
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
                 try
                 {
                     List<Element> elementlist = new List<Element>();
                     List<ElementId> rvConduitlist = new List<ElementId>();
                     string value = string.Empty;
-                    foreach (ElementId id in modifiedElem)
+                    foreach (ElementId id in SelectedElements.Select(x => x.Id))
                     {
                         Element elem = doc.GetElement(id);
                         if (elem.Category != null && elem.Category.Name == "Conduits")
                         {
-                            Parameter parameter = elem.LookupParameter("AutoUpdater BendAngle");
-                            value = parameter.AsString();
                             elementlist.Add(elem);
                         }
-
                     }
                     ChangesInformationForm.instance.MidSaddlePt = elementlist.Distinct().ToList();
                     ChangesInformationForm.instance._elemIdone.Clear();
@@ -292,28 +322,21 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                             }
                             foreach (ElementId eid in Icollect)
                             {
-                                if (doc.GetElement(eid) != null && (doc.GetElement(eid).Category != null &&
-                                    doc.GetElement(eid).Category.Name == "Conduit Fittings"))
+                                if(doc.GetElement(eid) != null && (doc.GetElement(eid).Category != null && doc.GetElement(eid).Category.Name == "Conduit Fittings"))
                                 {
                                     FittingElem.Add(eid);
                                 }
                             }
                         }
                     }
-
                     List<ElementId> FittingElements = new List<ElementId>();
-
                     FittingElements = FittingElem.Distinct().ToList();
                     List<Element> BendElements = new List<Element>();
                     foreach (ElementId id in FittingElements)
                     {
                         BendElements.Add(doc.GetElement(id));
-
-
                     }
                     List<ElementId> Icollector = new List<ElementId>();
-
-
                     for (int i = 0; i < BendElements.Count; i++)
                     {
                         ConnectorSet connector = GetConnectorSet(BendElements[i]);
@@ -326,38 +349,23 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                             }
                         }
                     }
-          
                     foreach (ElementId eid in Icollector)
                     {
-                        if (doc.GetElement(eid) != null && (doc.GetElement(eid).Category != null &&
-                            doc.GetElement(eid).Category.Name == "Conduits"))
+                        if (doc.GetElement(eid) != null && (doc.GetElement(eid).Category != null && doc.GetElement(eid).Category.Name == "Conduits"))
                         {
                             ChangesInformationForm.instance._selectedElements.Add(eid);
                         }
                     }
                     List<Element> elementtwo = new List<Element>();
                     List<ElementId> RefID = new List<ElementId>();
+
                     for (int i = 0; i < BendElements.Count; i++)
                     {
                         for (int j = i + 1; j < BendElements.Count; j++)
                         {
                             Element elemOne = BendElements[i];
                             Element elemTwo = BendElements[j];
-                            Parameter parameter = elemOne.LookupParameter("Angle");
-                            if (parameter.AsValueString() == "90.00°"|| parameter.AsValueString() == "90°")
-                            {
-                                ConnectorSet firstconnector = GetConnectorSet(elemOne);
-                                foreach (Connector connector in firstconnector)
-                                {
-                                    ConnectorSet cs1 = connector.AllRefs;
-                                    foreach (Connector c in cs1)
-                                    {
-                                        RefID.Add(c.Owner.Id);
-                                    }
-                                }
-                            }
-                            ChangesInformationForm.instance._refConduitKick.AddRange(RefID);
-                            ChangesInformationForm.instance._Value = value;
+                             
                             if (elemOne != null)
                             {
                                 ConnectorSet firstconnector = GetConnectorSet(elemOne);
@@ -380,8 +388,6 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                                             }
                                         }
                                     }
-
-
                                     List<ElementId> IDtwo = new List<ElementId>();
                                     foreach (Connector connector in secondconnector)
                                     {
@@ -399,42 +405,30 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
                                                 {
                                                     ChangesInformationForm.instance._deletedIds.Add(eid);
                                                     rvConduitlist.Add(eid);
-
                                                 }
                                             }
                                         }
                                     }
                                     ChangesInformationForm.instance._deletedIds.Add(elemOne.Id);
                                     ChangesInformationForm.instance._deletedIds.Add(elemTwo.Id);
+                                    var l = rvConduitlist.Distinct();
+                                    ChangesInformationForm.instance._selectedElements = ChangesInformationForm.instance._selectedElements.Except(l).ToList();
                                 }
                                 catch
                                 {
-
                                 }
-
                             }
                         }
                     }
-                    try
-                    {
-                        var l = rvConduitlist.Distinct();
-                        ChangesInformationForm.instance._selectedElements = ChangesInformationForm.instance._selectedElements.Except(l).ToList();
-                        AngleDrawHandler handler = new AngleDrawHandler();
-                        ExternalEvent DrawEvent = ExternalEvent.Create(handler);
-                        DrawEvent.Raise();
-
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error");
-                    }
                 }
-                catch { }
-            }
+                catch
+                {
 
+                }
+            }
         }
         #endregion
-
+        
         #region Class Methods
         /// <summary>
         /// This method is used to retrieve the changed element and add row to data table.
@@ -442,73 +436,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// <param name="id"></param>
         /// <param name="doc"></param>
         /// <param name="changeType"></param>
-        public void AddChangeInfoRow(ElementId id, Document doc, string changeType)
-        {
-            // retrieve the changed element
-            Element elem = doc.GetElement(id);
 
-            MessageBox.Show(elem.Id.ToString());
-            DataRow newRow = m_ChangesInfoTable.NewRow();
-            if (elem != null)
-            {
-
-                Element primaryelement = null;
-                ConnectorSet firstconnector = Utility.GetConnectorSet(elem);
-                //ConnectorSet secondconnector = Utility.GetConnectorSet(elem);
-                try
-                {
-                    foreach (Connector connector in firstconnector)
-                    {
-                        primaryelement = connector.Owner;
-                        MessageBox.Show(primaryelement.Id.ToString());
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("error");
-                }
-                Parameter parameter = elem.LookupParameter("Bend Angle");
-                string value = parameter.AsString();
-                // Parameter p = elem.get_Parameter(BuiltInParameter.CONDUIT_STANDARD_TYPE_PARAM);
-                // Pname = p.Definition.Name;
-                // string changes = string.Empty;
-                List<string> list = new List<string>();
-                /* Element elemtcollec = new FilteredElementCollector(doc).OfClass(typeof(Conduit)).FirstOrDefault();
-                 try
-                 {
-                     foreach (var p in elem.GetOrderedParameters().Where(x => !x.IsReadOnly).ToList())
-                     {
-                         Parameter parameter1 = elem.LookupParameter(p.Definition.Name);
-                         if (parameter1.AsString() != value)
-                         {
-                             //list.Add(p.Definition.Name);
-                             //changes = parameter1.AsString();
-                         }
-                         else
-                         {
-
-                         }
-                     }
-                 }
-                 catch
-                 {
-                     return;
-                 }*/
-                if (elem.Category.Name == "Center line")
-                {
-                    //MessageBox.Show("Category : " + elem.Category.Name + " \n" + "ID :" + id.ToString() + " in " + string.Join(",", list));
-
-                }
-                else
-                {
-                    if (value != null)
-                        MessageBox.Show("Category : " + elem.Category.Name + " \n" + "ID : " + id.ToString() + "\n" + " Bend Angle : " + value);
-                    //list.Clear();
-                }
-                // return value;
-            }
-
-        }
 
         public static ConnectorSet GetConnectorSet(Autodesk.Revit.DB.Element Ele)
         {
@@ -533,6 +461,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
         /// Generate a data table with five columns for display in window
         /// </summary>
         /// <returns>The DataTable to be displayed in window</returns>
+
         private DataTable CreateChangeInfoTable()
         {
             // create a new dataTable
@@ -574,9 +503,9 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
     /// </summary>
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
+  
     public class Command : IExternalCommand
     {
-
         public List<ElementId> _deletedIds = new List<ElementId>();
         #region IExternalCommand Members
         /// <summary>
@@ -619,3 +548,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
     }
 
 }
+
+
+
+
